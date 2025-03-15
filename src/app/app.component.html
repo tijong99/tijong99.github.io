@@ -1,6 +1,8 @@
-<div>
-{{title}}
-Hello world
-
-
+<div class="text">
+Lorem 
+    @for(hoverText of hoverTextList; track $index; let i = $index){
+        <span [class]="hoverTextList[i].style" (mouseover)="rouletteOnHover(i)">{{hoverTextList[i].list[hoverTextList[i].index]}} </span>
+        
+    }
+    
 </div>
