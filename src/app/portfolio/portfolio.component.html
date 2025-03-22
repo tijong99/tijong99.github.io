@@ -1,0 +1,26 @@
+<div class="container">
+    <div (scroll)="onScroll($event)">
+      @for (portfolioItem of portfolioItemList; track $index) {
+      <div
+        [id]="portfolioItem.title"
+        class="portfolio-item-page"
+        [innerHTML]="portfolioItem.html"
+      ></div>
+      }
+    </div>
+
+    <div class="side-bar">
+        <div class="nav-bar">
+          <mat-list role="list">
+            @for (portfolioItem of portfolioItemList; track $index) {
+            <mat-list-item
+              (click)="scrollToPortfolioItem(portfolioItem.title)"
+              role="listitem"
+              >{{ portfolioItem.title }}</mat-list-item
+            >
+            }
+          </mat-list>
+        </div>
+      </div>
+  </div>
+  

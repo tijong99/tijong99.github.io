@@ -1,60 +1,36 @@
+import { MatTabChangeEvent, MatTabsModule } from '@angular/material/tabs';
+
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    HomeComponent,
+    MatTabsModule,
+    PortfolioComponent,
+    ProjectsComponent,
+    CommonModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  ipsumList = ['ipsum', 'ipso', 'ispi'];
-  indexInit = [0];
+  pageSelected: string = 'projects';
 
-  hoverTextList: HoverText[] = [
-    {
-      index: 0,
-      list: ['ipsum', 'ipso', 'iskjfhxdiashzfkahfoihpi'],
-      style: '',
-    },
-    {
-      index: 0,
-      list: [
-        'dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat',
-      ],
-      style: '',
-    },
-    {
-      index: 0,
-      list: ['nulla', 'eene', 'tweee', 'drieeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
-      style: '',
-    },
-  ];
+  constructor() {}
 
-  //   constructor() {
-
-  //     setInterval(() => {
-  //       this.hoverTextList.push({
-  // index: 0,
-  // list: ["kjsanakkjasd"]
-
-  //       })
-  //     }, 1000);
-  //   }
-
-  rouletteOnHover(index: number) {
-    let length = this.hoverTextList[index].list.length;
-    if (length > 1) {
-      this.hoverTextList[index].index =
-        (this.hoverTextList[index].index + 1) % length;
-      this.hoverTextList[index].style = 'red';
-//     let temp = Math.floor(Math.random() * 6) 
+  selectedTabChange(event: MatTabChangeEvent) {
+    switch (event.index) {
+      case 0:
+        this.pageSelected = 'projects';
+        break;
+      case 2:
+        this.pageSelected = 'portfolio';
+        break;
     }
   }
-}
-
-export interface HoverText {
-  list: string[];
-  index: number;
-  style: string;
 }

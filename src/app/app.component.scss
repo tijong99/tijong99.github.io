@@ -1,10 +1,24 @@
-.text {
-  font-size: calc(300% + 2vw);
-  height: 1vh;
+.home-container{
+    
 }
 
-.red {
+.main {
+   display: block;
+   height: 95vh;
+}
 
-    background-color:red;
-    color: white
+.footer {
+    display: block;
+    position: sticky;
+    top: 0;
+}
+
+::ng-deep .mat-mdc-tab.mdc-tab {
+    height: 5vh !important;
+    background: red;
+}
+
+.below-footer
+{
+    margin-top: 10vh;
 }

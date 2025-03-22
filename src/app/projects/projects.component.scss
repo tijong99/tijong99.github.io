@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+}
+
+.side-bar {
+    background-color: red;
+    color: white;
+}
+
+.nav-bar {
+    position: sticky;
+    top: 5vh;
+}
+
+.project-page {
+    display: block;
+    height: 100vh;
+    scroll-margin: 5vh;
+}

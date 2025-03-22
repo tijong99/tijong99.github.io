@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="side-bar">
+    <div class="nav-bar">
+      <mat-list role="list">
+        @for (project of projectList; track $index) {
+        <mat-list-item
+          (click)="scrollToProject(project.title)"
+          role="listitem"
+          >{{ project.title }}</mat-list-item
+        >
+        }
+      </mat-list>
+    </div>
+  </div>
+
+  <div (scroll)="onScroll($event)">
+    @for (project of projectList; track $index) {
+    <div
+      [id]="project.title"
+      class="project-page"
+      [innerHTML]="project.html"
+    ></div>
+    }
+  </div>
+</div>

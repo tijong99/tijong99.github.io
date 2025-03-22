@@ -1,8 +1,15 @@
-<div class="text">
-Lorem 
-    @for(hoverText of hoverTextList; track $index; let i = $index){
-        <span [class]="hoverTextList[i].style" (mouseover)="rouletteOnHover(i)">{{hoverTextList[i].list[hoverTextList[i].index]}} </span>
-        
-    }
-    a
+<div class="home-container">
+  <app-home class="main"></app-home>
+  <div class="footer">
+    <mat-tab-group (selectedTabChange)="selectedTabChange($event)" backgroundColor="primary">
+      <mat-tab label="Projectjes">
+      </mat-tab>
+      <mat-tab disabled></mat-tab>
+      <mat-tab label="Timmie">
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <app-portfolio class="below-footer" *ngIf="pageSelected=='portfolio'"></app-portfolio>
+  <app-projects class="below-footer" *ngIf="pageSelected=='projects'"></app-projects>
 </div>
