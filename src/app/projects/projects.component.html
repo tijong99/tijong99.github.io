@@ -4,6 +4,7 @@
       <mat-list role="list">
         @for (project of projectList; track $index) {
         <mat-list-item
+        [class.active]="detectedProjectpage == project.title"
           (click)="scrollToProject(project.title)"
           role="listitem"
           >{{ project.title }}</mat-list-item
@@ -13,9 +14,10 @@
     </div>
   </div>
 
-  <div (scroll)="onScroll($event)">
+  <div>
     @for (project of projectList; track $index) {
     <div
+      #projectPage
       [id]="project.title"
       class="project-page"
       [innerHTML]="project.html"
