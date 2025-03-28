@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,36 +6,98 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
   hoverTextList: HoverText[] = [
     {
       index: 0,
-      list: ['ipsum', 'ipso', 'iskjfhxdiashzfkahfoihpi'],
+      list: ['Seeking', 'Traversing', 'Exploring', 'Revealing'],
+      style: 'red',
+    },
+
+    {
+      index: 0,
+      list: [' the '],
       style: '',
     },
     {
       index: 0,
-      list: [
-        'dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat',
-      ],
+      list: ['creative', 'generavtive', 'transformative'],
+      style: 'red',
+    },
+    {
+      index: 0,
+      list: [' potential in the complexities of the '],
       style: '',
     },
     {
       index: 0,
-      list: ['nulla', 'eene', 'tweee', 'drieeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
+      list: ['natural', 'physical'],
+      style: 'red',
+    },
+    {
+      index: 0,
+      list: [' world. Using  '],
+      style: '',
+    },
+    {
+      index: 0,
+      list: ['artistic', 'tinkering', 'open-ended making', 'enacting'],
+      style: 'red',
+    },
+    {
+      index: 0,
+      list: [' strategies.  To '],
+      style: '',
+    },
+
+    {
+      index: 0,
+      list: ['imagine', 'dream', 'verbalize', 'demonstrate', 'reserach'],
+      style: 'red',
+    },
+    {
+      index: 0,
+      list: [' new ways of  '],
+      style: '',
+    },
+    {
+      index: 0,
+      list: ['being with', 'relating to'],
+      style: 'red',
+    },
+    {
+      index: 0,
+      list: [' sociotechnical  '],
+      style: '',
+    },
+    {
+      index: 0,
+      list: ['systems', 'technologies', 'practices'],
+      style: 'red',
+    },
+    {
+      index: 0,
+      list: [' that shape it.  '],
       style: '',
     },
   ];
+
+  stylesList = ['red', 'orange', 'yellow', 'blue', 'violet'];
+  styleIndex = 0;
+
+  randomColor() {
+    this.styleIndex = Math.floor(Math.random() * 5);
+    return this.styleIndex;
+  }
 
   rouletteOnHover(index: number) {
     let length = this.hoverTextList[index].list.length;
     if (length > 1) {
       this.hoverTextList[index].index =
         (this.hoverTextList[index].index + 1) % length;
-      this.hoverTextList[index].style = 'red';
-//     let temp = Math.floor(Math.random() * 6) 
+      this.hoverTextList[index].style = this.stylesList[this.randomColor()];
     }
   }
 }

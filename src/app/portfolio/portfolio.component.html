@@ -1,26 +1,29 @@
-<div class="container">
-    <div (scroll)="onScroll($event)">
-      @for (portfolioItem of portfolioItemList; track $index) {
+  <div class="container">
+   <div>
+      @for (portfolio of portfolioList; track $index) {
       <div
-        [id]="portfolioItem.title"
-        class="portfolio-item-page"
-        [innerHTML]="portfolioItem.html"
+        #portfolioPage
+        [id]="portfolio.title"
+        class="portfolio-page"
+        [innerHTML]="portfolio.html"
       ></div>
       }
-    </div>
-
+    </div> 
+    
     <div class="side-bar">
-        <div class="nav-bar">
-          <mat-list role="list">
-            @for (portfolioItem of portfolioItemList; track $index) {
-            <mat-list-item
-              (click)="scrollToPortfolioItem(portfolioItem.title)"
-              role="listitem"
-              >{{ portfolioItem.title }}</mat-list-item
-            >
-            }
-          </mat-list>
-        </div>
+      <div class="nav-bar">
+        <mat-list role="list">
+          @for (portfolio of portfolioList; track $index) {
+          <mat-list-item
+          [class.active]="detectedPortfoliopage == portfolio.title"
+            (click)="scrollToPortfolio(portfolio.title)"
+            role="listitem"
+            >{{ portfolio.title }}</mat-list-item
+          >
+          }
+        </mat-list>
       </div>
-  </div>
+    </div>
   
+   
+  </div>

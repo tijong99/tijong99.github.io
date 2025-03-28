@@ -1,24 +1,100 @@
 .container {
-    display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
 }
 
 .side-bar {
-    background-color: red;
-    color: white;
+  font-family: "Winky Sans", sans-serif;
+  background-color: rgba(217, 210, 208, 1);
+  color: rgba(255, 255, 255, 0.19);
+  padding: 40px;
+  width: 22vw;
+  margin-top: -10vh; //Deze moet van 0 naar dit voor animatie
 }
 
 .nav-bar {
-    position: sticky;
-    top: 5vh;
+  color: rgba(255, 255, 255, 0.5);
+  position: sticky;
+  top: 20vh;
+  width: 22vw;
+  margin-top: 10vh; //Deze moet van 0 naar dit voor animatie
 }
 
 .project-page {
-    display: block;
-    height: 100vh;
-    scroll-margin: 5vh;
+  font-family: "parkinsans", sans-serif;
+  color: rgba(64, 13, 1, 1);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  scroll-margin: 30vh;
+  flex: 1;
+  width: 100%;
+  padding: 3vw;
+  margin-bottom: 10vh; // Add whitespace between project pages
 }
 
-.active
-{
-    background: white !important;
+.active {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.photo {
+  flex-direction: column;
+  display: flex;
+  padding: 3vw;
+  max-height: 50vh;
+  width: auto;
+  max-width: 80%;
+  object-fit: cover;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  margin-bottom: 10vh; // Add whitespace between project containers
+}
+
+@media (max-width: 1500px) {
+  .project-container {
+    flex-direction: column;
+    display: flex;
+  }
+
+  .photo {
+    flex-direction: column;
+    display: flex;
+    padding: 3vw;
+    max-height: 50vh;
+    width: auto;
+    max-width: 80%;
+    object-fit: cover;
+  }
+
+  .project-page {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .project-container {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-evenly;
+  }
+
+  .photo {
+    width: 30%;
+    max-height: 50%;
+    padding: 3vw;
+
+    object-fit: cover;
+  }
+
+  .project-page {
+    width: 70%;
+    padding: 3vw;
+  }
 }

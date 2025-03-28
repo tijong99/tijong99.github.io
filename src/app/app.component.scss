@@ -1,24 +1,45 @@
-.home-container{
-    
+@use "@angular/material" as mat;
+
+.home-container {
 }
 
 .main {
-   display: block;
-   height: 95vh;
+  display: block;
+  height: 70vh;
+  padding: 10vh;
+  font-family: "Winky Sans", sans-serif;
+  font-weight: 300;
+  text-align: justify;
 }
 
 .footer {
-    display: block;
-    position: sticky;
-    top: 0;
+  display: block;
+  position: sticky;
+  max-width: 100vw;
+}
+.red {
+  @include mat.tabs-overrides(
+    (
+      divider-color: rgba(64, 13, 1, 1),
+      active-indicator-height: 1vh,
+    )
+  );
+}
+::ng-deep .mat-mdc-tab.mdc-tab .mdc-tab-indicator {
+  color: rgba(217, 210, 208, 1) !important;
+  height: 10vh !important;
+  font-family: "Winky Sans", sans-serif;
+  font-weight: 800;
+  font-size: calc(1vh + 1vw);
 }
 
 ::ng-deep .mat-mdc-tab.mdc-tab {
-    height: 5vh !important;
-    background: red;
+  height: 10vh !important;
+  font-family: "Winky Sans", sans-serif;
+  font-weight: 800;
+  font-size: calc(1vh + 1vw);
 }
 
-.below-footer
-{
-    margin-top: 10vh;
+.below-footer {
+  margin-top: 10vh;
 }

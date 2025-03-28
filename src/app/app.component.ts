@@ -1,9 +1,8 @@
 import { MatTabChangeEvent, MatTabsModule } from '@angular/material/tabs';
-
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { HomeComponent } from './home/home.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
+import { PortfoliosComponent } from './portfolio/portfolio.component';
 import { ProjectsComponent } from './projects/projects.component';
 
 @Component({
@@ -11,7 +10,7 @@ import { ProjectsComponent } from './projects/projects.component';
   imports: [
     HomeComponent,
     MatTabsModule,
-    PortfolioComponent,
+    PortfoliosComponent,
     ProjectsComponent,
     CommonModule,
   ],
@@ -19,16 +18,27 @@ import { ProjectsComponent } from './projects/projects.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  pageSelected: string = 'projects';
+  pageSelected: string = '';
 
-  constructor() {}
+  constructor() {
+    this.mainColor = this.randomColor();
+  }
+
+  stylesList = ['red', 'red', 'red', 'red', 'red', 'red'];
+  styleIndex = 0;
+  mainColor = '';
+
+  randomColor() {
+    this.styleIndex = Math.floor(Math.random() * 6);
+    return this.stylesList[this.styleIndex];
+  }
 
   selectedTabChange(event: MatTabChangeEvent) {
     switch (event.index) {
       case 0:
         this.pageSelected = 'projects';
         break;
-      case 2:
+      case 4:
         this.pageSelected = 'portfolio';
         break;
     }
