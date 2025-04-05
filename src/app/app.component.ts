@@ -38,9 +38,11 @@ export class AppComponent {
       case 0:
         this.pageSelected = 'projects';
         break;
-      case 4:
+      case 2:
         this.pageSelected = 'portfolio';
         break;
+      default:
+        this.pageSelected = '';
     }
   }
 }

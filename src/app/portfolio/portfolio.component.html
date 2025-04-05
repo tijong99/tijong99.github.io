@@ -37,6 +37,18 @@
     <div class="nav-bar">
       <mat-list role="list">
         <mat-list-item
+          (click)="scrollToPortfolio('About Me')"
+          role="listitem"
+        >
+          About Me
+        </mat-list-item>
+        <mat-list-item
+          (click)="scrollToPortfolio('Portfolio')"
+          role="listitem"
+        >
+          Portfolio
+        </mat-list-item>
+        <mat-list-item
           *ngFor="let portfolio of portfolioList"
           [class.active]="detectedPortfoliopage == portfolio.title"
           (click)="scrollToPortfolio(portfolio.title)"
