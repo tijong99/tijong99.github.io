@@ -11,6 +11,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-projects',
@@ -26,32 +27,134 @@ export class ProjectsComponent {
 
   projectList: Project[] = [
     {
-      image: '',
-      title: 'Project 2',
-      html: '<p>Lorem ipsum dolor sit amet. Ea vitae quibusdam et quod labore sed placeat quaerat aut quasi quos ut asperiores fugit sed neque quod. At dolorum autem hic voluptate autem a culpa iusto aut expedita quia et quia alias in illum commodi. Et cupiditate voluptas est nihil officiis eum obcaecati omnis qui voluptas ducimus et tenetur dolorum est ducimus laudantium aut molestias incidunt. Qui sint earum qui molestiae nostrum et ratione omnis ex eius quia ab voluptates voluptas in omnis officiis nam sint possimus. Qui placeat voluptatem qui mollitia quia ut quaerat veniam aut quia voluptatem sit dolorem consequatur cum adipisci voluptatem sit quia facilis. </p><p>Et similique voluptatem aut nostrum dolores et corrupti rerum 33 harum labore eum voluptas animi qui perspiciatis temporibus ea sunt suscipit. Id praesentium nesciunt et tempore atque non dolor quia aut itaque voluptas ut quia quia. Et adipisci repudiandae sed dignissimos corrupti qui architecto dolorem qui cupiditate nulla rem eius voluptatibus eos quis vitae rem fugiat earum. Quo voluptatem quas eos tempore ducimus ut consectetur reprehenderit aut temporibus necessitatibus et iusto accusamus. Qui deserunt amet id veniam optio qui consequuntur rerum in omnis possimus qui aliquid molestiae. </p><p>Sed consectetur quasi sit rerum libero ut sint fugiat ex excepturi quis. Non sint veritatis ab itaque harum ut voluptates quae. Est magnam minima hic aliquam odio eos error numquam in quidem corrupti et accusamus sunt. Quo totam quae est harum magni et maxime impedit. Aut voluptatem voluptatem et dicta corporis rem ullam autem. Et cumque voluptas et eius tempora et quia quisquam in autem atque quo dolorem consequatur qui dolores saepe qui ullam ratione. Eos dolorem temporibus et quis culpa eos quia omnis sed unde iure et harum dolores. Quo libero numquam ea voluptatem quidem ex illum pariatur a dolorum voluptas ea incidunt voluptatem. Ea quam pariatur ex omnis sequi ab sint dicta a iure dolorem aut fugiat esse qui distinctio explicabo et quia voluptatem. </p>',
+      image: '../../assets/FMP.JPG',
+      title: 'FMP (M21) - Metalmorphosis',
+      content: {
+        heading: 'FMP (M21) - Metalmorphosis',
+        subheading:
+          'Exploring the potential of a novel material through open-ended making, into posthuman jewelry.',
+        date: 'Juli 2025 - CA/TR',
+        paragraphs: ['In becoming...'],
+      },
     },
     {
-      image: '../../assets/palette.png',
-      title: 'PIV - Profesional identity and vision',
-      html: `
-        <h1>PIV - Profesional identity and vision</h1>
-        <p>I am a designer who is driven by change and innovation through experiences that transform societies. With technology at the heart of every idea, I aim to reshape our relationship with the things in our world.</p>
-        <p>My work is grounded in the belief that design can be a powerful tool for change. I am committed to creating spaces that are not only functional and beautiful but also transformative.</p>
-        <p>My design process is rooted in the belief that the best solutions are those that are deeply connected to the world around us.</p>
-        <p>To achieve this, I rely on artistic processes—because that is what I believe in. I have moved beyond the modernist paradigm of data-driven, cause-and-effect thinking in which I was trained as a physicist. Instead, I see greater potential in innovation approaches rooted in values, intuition, and experimentation—methods often inspired by the arts. The result: designs that are more expressive and deeply connected to the world.</p>
-        <p>In a world where many shy away from complexity, I believe innovation thrives by embracing it. I do this by engaging with everything I encounter on design journeys—colleagues, stakeholders, materials, and methods. When true alignment exists, there is no friction, only momentum toward shared goals. This demands value-based leadership and trust in the world around us.</p>
-        <p>The freedom I need to fully commit to this way of working is fueled by my entrepreneurial spirit. I am self-directed and bring my full, authentic self to the table every day, inspiring others to join in. I proactively seek opportunities and feedback, driven by a deep motivation to contribute to the public domain—transforming the everyday through innovative spatial experiences.</p>
-      `,
+      image: '../../assets/Oids.png',
+      title: 'M12 - The Oids',
+      content: {
+        heading: 'M12 - The Oids',
+        subheading:
+          'Exploring the potential of a novel material through open-ended making, into posthuman jewelry.',
+        date: 'Juli 2025 - CA/TR',
+        paragraphs: [
+          'Are there patterns in how things come into being?',
+          'During this research process, I embarked on an open-ended journey to explore what complexity means for design. Through over 50 iterations of the oids—a designed artifact consisting of a springy 3D-printed body and a magnet—I studied their behavior and the emergent qualities that arose when they moved in swarms.This exploration proved highly fruitful. The artifacts had an inherent attraction to anyone who interacted with them, and multiple academic directions emerged from the study (e.g., non-human charisma).Ultimately, I concluded that complexity has a benign shape—one that can be molded. To capture this, I formulated a set of heuristics for designing such artifacts, enabling complex tangible interaction and offering both an invitation and an initial vocabulary for other designers to embark on similar journeys.This insight profoundly influenced my design process, leading me to explore complexity dividends and consider design entropy as essential factors in my work.',
+        ],
+      },
     },
 
     {
-      image: '../../assets/Oids.png',
-      title: 'Project 3',
-      html: '<h1>The Oids - M12</h1><p>Are there patterns in how things come into being? During this research process, I embarked on an open-ended journey to explore what complexity means for design. Through over 50 iterations of the oids—a designed artifact consisting of a springy 3D-printed body and a magnet—I studied their behavior and the emergent qualities that arose when they moved in swarms. This exploration proved highly fruitful. The artifacts had an inherent attraction to anyone who interacted with them, and multiple academic directions emerged from the study (e.g., non-human charisma). Ultimately, I concluded that complexity has a benign shape—one that can be molded. To capture this, I formulated a set of heuristics for designing such artifacts, enabling complex tangible interaction and offering both an invitation and an initial vocabulary for other designers to embark on similar journeys. This insight profoundly influenced my design process, leading me to explore complexity dividends and consider design entropy as essential factors in my work. </p>',
+      image: '../../assets/RT.png',
+      title: 'M11 - Radical Transparency',
+      content: {
+        heading: 'M11 - Radical Transparency',
+        subheading:
+          'Scaffolding futures of transparency-policy implementation with experiential prototypes',
+
+        date: 'Januari 2024 - US-TR (MDC-CA)',
+        paragraphs: [
+          'In a project that was far more pragmatic and situated than my personal work, we developed a workshop and a dichotomic prototype, presenting two radically different implementations of transparency policy. The setup was designed with a high level of detail to facilitate discussion on the situated specifics of these imagined implementations.',
+          'By experiencing the prototypes firsthand, stakeholders could concretely see how specific design choices shape the experiences of both government officials and citizens within transparency processes. We consider this dichotomic setup to be a generalizable research approach.',
+          'This project serves as an example of how to foreground the complexities of an Anthropocene system.',
+        ],
+      },
+    },
+    {
+      image: '../../assets/Rectum.png',
+      title: 'Anatomy in silver',
+      content: {
+        heading: 'Anatomy in silver',
+        subheading: 'Creating silver jewelry from medical imagery',
+        date: 'January 2022',
+        paragraphs: [
+          'You might not recognize it, but this is the shape of an actual rectum. The model—extracted from DICOM files of a CT scan—captures the precise geometry of a rectum, which was then transformed into a silver pendant using the lost wax casting method from a 3D print.',
+          'Due to its ambiguous form, the necklace’s meaning remains subtly concealed. To most observers, it appears as a naturalistic, amorphous shape.',
+          'I have long seen potential in developing this as a service for individuals with a deeply personal connection to a part of their body—such as cancer survivors. The pendant could serve as a way to reframe their relationship with their body and past experiences, offering a means to process and reinterpret their journey.',
+        ],
+      },
+    },
+    {
+      image: '../../assets/Ballroom.png',
+      title: 'Ballroom',
+      content: {
+        heading: 'Ballroom',
+        subheading: 'Moved by light',
+        date: 'October 2021',
+        paragraphs: [
+          'The world is increasingly governed by algorithms. Human movement—and how it is perceived and enacted—is intricately linked to other actors and the environment. Rich interactions emerge when you design these simple relationships within their context.',
+          'In the aftermath of COVID, we designed a ballroom where people could celebrate being together outside once again. We developed a ‘social-distancing-proof’ system using a simple Kalman filter and prediction algorithm, which created a convincing experience of "dancing with" others.',
+          'Based on my BSc thesis, the system allowed for 16 light-human dance couples to form, using AI-powered pedestrian detection from an overhead sensing system, part of the living lab. This project was exhibited during GLOW 2021 on campus.',
+        ],
+      },
+    },
+    {
+      image: '../../assets/CollectingCompassion.png',
+      title: 'Collecting Compassion',
+      content: {
+        heading: 'Collecting Compassion',
+        subheading:
+          'Creating a daily ritual of sharing our compassion as a statement of peace',
+        date: 'April 2022',
+        paragraphs: [
+          'When the war in Ukraine began, both I and the innovation space felt overwhelmingly powerless and wanted to contribute in some meaningful way. Very quickly, we assembled a team to develop an installation artwork to show our support for those affected by the situation.',
+          'In the transitional space between the entrance and landing floor, we created an interactive experience where any passerby could send a drawing of a heart, which would then be projected onto both them and the wall they were facing. As more blue and yellow hearts were added, they mixed together to create an increasingly white projection, symbolizing our shared intention for peace.',
+        ],
+      },
+    },
+    {
+      image: '../../assets/EenEindjeMooierTunnel.png',
+      title: 'Een eindje Mooier',
+      content: {
+        heading: 'Een eindje Mooier',
+        subheading: 'Guerilla hacking of public lighting',
+        date: 'June 2021',
+        paragraphs: [
+          'A specific rail underpass, over 100 meters long and located next to the campus, was dull by day and intimidating by night. Stuck in bureaucratic limbo, awaiting development as part of a new construction project, it had been neglected.',
+          'Driven by a stubborn desire to address this, I designed an immersive, colorful installation and, with the help of friends, implemented it at night. The result was a moment of wonder for every passerby, and the Aldermen were impressed.',
+          'Through this act of guerrilla light street art, I reflect on the urban development process and suggest the role one can play as a constructive, designing citizen—ultimately inspiring me to approach the world as if it were my own backyard.',
+        ],
+      },
+    },
+    {
+      image: '../../assets/UrbanMycelium.png',
+      title: 'Urban mycelium',
+      content: {
+        heading: 'Urban mycelium',
+        subheading:
+          'Sprouting light-streetart to highlight the unused potential across the city as a living ecosystem',
+        date: 'April 2024',
+        paragraphs: [
+          'The city, one of my obsessions, is a complex, living ecosystem. Like any ecosystem, it consists of actors, processes, and cycles. Part of the ecosystem decomposes to make room for new growth—autopoiesis. This city, in a constant state of coupled self-generation and decay, is not managed with this understanding.',
+          'I introduce a new urban mycelium to the ecosystem. Through this street art project, I allow light-emitting "elven benches" to fruit. Just as fungi sprout fruiting bodies from their mycelium in areas where the city is decomposing, I aim to close the cycle of urban growth. In doing so, I highlight areas with high potential for new development and challenge the conventional cycle of urban development through a naturalistic metaphor.',
+        ],
+      },
+    },
+    {
+      image: '../../assets/Consultancy.png',
+      title: 'Uncommon Public Lighting',
+      content: {
+        heading: 'Uncommon Public Lighting',
+        subheading:
+          'Creatively converging municipalities and industry to develop novel public lighting concepts for yet unsolved characteristic cases',
+        date: 'June 2023 – June 2024',
+        paragraphs: [
+          'As a freelance designer, I joined the team at Lighthouse Tue, working to bring together all partners in the public lighting ecosystem in a user-centric way. Our goal was to develop new design solutions for archetypal public lighting challenges that remain unsolved.',
+          'For the municipalities of Amsterdam, Amstelveen, and Utrecht, we developed over 16 design concepts across two projects. These concepts converged into prototypes that were evaluated through UX surveys, light intensity analyses, and situated workshops with stakeholders and visitors. The workshops helped us understand the interconnections between the various actors involved.',
+        ],
+      },
     },
   ];
 
-  constructor(private renderer: Renderer2) {
+  constructor(private renderer: Renderer2, private sanitizer: DomSanitizer) {
     this.renderer.listen('window', 'scroll', this.detectProjectPage.bind(this));
   }
   stylesList = ['red', 'orange', 'yellow', 'green', 'blue', 'violet'];
@@ -92,6 +195,11 @@ export class ProjectsComponent {
 
 export interface Project {
   title: string;
-  html: string;
   image: string;
+  content: {
+    heading: string;
+    subheading?: string;
+    date?: string;
+    paragraphs: string[];
+  };
 }

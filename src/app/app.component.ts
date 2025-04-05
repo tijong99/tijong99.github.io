@@ -2,7 +2,7 @@ import { MatTabChangeEvent, MatTabsModule } from '@angular/material/tabs';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { HomeComponent } from './home/home.component';
-import { PortfoliosComponent } from './portfolio/portfolio.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectsComponent } from './projects/projects.component';
 
 @Component({
@@ -10,7 +10,7 @@ import { ProjectsComponent } from './projects/projects.component';
   imports: [
     HomeComponent,
     MatTabsModule,
-    PortfoliosComponent,
+    PortfolioComponent,
     ProjectsComponent,
     CommonModule,
   ],

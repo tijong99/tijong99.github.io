@@ -1,29 +1,51 @@
-  <div class="container">
-   <div>
-      @for (portfolio of portfolioList; track $index) {
-      <div
-        #portfolioPage
-        [id]="portfolio.title"
-        class="portfolio-page"
-        [innerHTML]="portfolio.html"
-      ></div>
-      }
-    </div> 
-    
-    <div class="side-bar">
-      <div class="nav-bar">
-        <mat-list role="list">
-          @for (portfolio of portfolioList; track $index) {
-          <mat-list-item
-          [class.active]="detectedPortfoliopage == portfolio.title"
-            (click)="scrollToPortfolio(portfolio.title)"
-            role="listitem"
-            >{{ portfolio.title }}</mat-list-item
-          >
-          }
-        </mat-list>
+<div class="container">
+  
+  <div>
+    <div
+      *ngFor="let portfolio of portfolioList"
+      class="portfolio-container"
+      #portfolioPage
+      [id]="portfolio.title"
+    >
+      <img class="photo" [src]="portfolio.image" [alt]="portfolio.title" />
+      <div class="portfolio-page">
+        <h1>{{ portfolio.content.heading }}</h1>
+        <h2 *ngIf="portfolio.content.subheading">{{ portfolio.content.subheading }}</h2>
+        <h3 *ngIf="portfolio.content.date"><em>{{ portfolio.content.date }}</em></h3>
+        <p *ngFor="let paragraph of portfolio.content.paragraphs">{{ paragraph }}</p>
       </div>
     </div>
-  
-   
+    <div *ngFor="let portfolio of portfolioList" id="{{ portfolio.title }}" class="portfolio-section">
+      <h2>{{ portfolio.content.heading }}</h2>
+      <div *ngIf="portfolio.title === 'Past-Present-Future'" class="three-columns">
+        <div class="column">
+          <p *ngFor="let paragraph of portfolio.content.paragraphs.slice(0, portfolio.content.paragraphs.length / 3)">{{ paragraph }}</p>
+        </div>
+        <div class="column">
+          <p *ngFor="let paragraph of portfolio.content.paragraphs.slice(portfolio.content.paragraphs.length / 3, 2 * portfolio.content.paragraphs.length / 3)">{{ paragraph }}</p>
+        </div>
+        <div class="column">
+          <p *ngFor="let paragraph of portfolio.content.paragraphs.slice(2 * portfolio.content.paragraphs.length / 3)">{{ paragraph }}</p>
+        </div>
+      </div>
+      <div *ngIf="portfolio.title !== 'Past-Present-Future'">
+        <p *ngFor="let paragraph of portfolio.content.paragraphs">{{ paragraph }}</p>
+      </div>
+    </div>
   </div>
+  <div class="side-bar">
+    <div class="nav-bar">
+      <mat-list role="list">
+        <mat-list-item
+          *ngFor="let portfolio of portfolioList"
+          [class.active]="detectedPortfoliopage == portfolio.title"
+          (click)="scrollToPortfolio(portfolio.title)"
+          role="listitem"
+        >
+          {{ portfolio.title }}
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+
+</div>

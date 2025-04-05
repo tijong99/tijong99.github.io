@@ -2,32 +2,33 @@
   <div class="side-bar">
     <div class="nav-bar">
       <mat-list role="list">
-        @for (project of projectList; track $index) {
         <mat-list-item
-        [class.active]="detectedProjectpage == project.title"
+          *ngFor="let project of projectList"
+          [class.active]="detectedProjectpage == project.title"
           (click)="scrollToProject(project.title)"
           role="listitem"
-          >{{ project.title }}</mat-list-item
         >
-        }
+          {{ project.title }}
+        </mat-list-item>
       </mat-list>
     </div>
   </div>
 
   <div>
-    @for (project of projectList; track $index) {
-    <div class="project-container">
-      <img class="photo" [src]="project.image" alt="palette">
-      <div
-        #projectPage
-        [id]="project.title"
-        class="project-page"
-        [innerHTML]="project.html"
-      >   
+    <div
+      *ngFor="let project of projectList"
+      class="project-container"
+      #projectPage
+      [id]="project.title"
+    >
+      <img class="photo" [src]="project.image" [alt]="project.title" />
+      <div class="project-page">
+        <h1>{{ project.content.heading }}</h1>
+        <h2 *ngIf="project.content.subheading">{{ project.content.subheading }}</h2>
+        <h3 *ngIf="project.content.date"><em>{{ project.content.date }}</em></h3>
+        <p *ngFor="let paragraph of project.content.paragraphs">{{ paragraph }}</p>
       </div>
     </div>
-    }
   </div>
-  
 </div>
 

@@ -34,6 +34,24 @@
   margin-bottom: 10vh; // Add whitespace between project pages
 }
 
+.project-page p {
+  margin: 0.2em; // Reduce paragraph breaks
+}
+
+.project-page h3 {
+  margin: 0.2em; // Reduce heading breaks
+  font-weight: 100;
+  text-align: end;
+}
+.project-page h2 {
+  margin: 0.2em; // Reduce heading breaks
+  font-family: "Winky Sans", sans-serif;
+  font-weight: 500;
+}
+.project-page h1 {
+  margin: 0.2em; // Reduce heading breaks
+}
+
 .active {
   background: rgba(255, 255, 255, 0.5) !important;
 }

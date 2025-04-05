@@ -23,7 +23,7 @@ export class HomeComponent {
     },
     {
       index: 0,
-      list: ['creative', 'generavtive', 'transformative'],
+      list: ['creative', 'generative', 'transformative'],
       style: 'red',
     },
     {
@@ -54,7 +54,7 @@ export class HomeComponent {
 
     {
       index: 0,
-      list: ['imagine', 'dream', 'verbalize', 'demonstrate', 'reserach'],
+      list: ['imagine', 'dream', 'verbalize', 'demonstrate', 'research'],
       style: 'red',
     },
     {
