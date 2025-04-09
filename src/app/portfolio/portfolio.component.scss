@@ -1,7 +1,12 @@
 .container {
   display: flex;
-  justify-content: space-between;
-  align-content: space-between;
+  align-content: left;
+  flex-direction: row-reverse;
+  width: 100%;
+  min-width: 0;
+}
+.content {
+  overflow-x: scroll;
 }
 
 .side-bar {
@@ -9,16 +14,20 @@
   background-color: rgba(217, 210, 208, 1);
   color: rgba(255, 255, 255, 0.19);
   padding: 40px;
-  width: 20w;
+  width: 20vw;
   margin-top: -10vh; //Deze moet van 0 naar dit voor animatie
 }
 .nav {
   font-size: calc(1vh + 0.5vw);
+  font-family: "Winky Sans", sans-serif;
+
+  color: rgba(64, 13, 1, 1);
 }
 
 .nav-bar {
   color: rgba(255, 255, 255, 0.5);
   top: 10vh;
+  position: sticky;
   width: 20vw;
   max-width: 20vw;
   margin-top: 10vh; //Deze moet van 0 naar dit voor animatie
@@ -31,9 +40,10 @@
   flex-direction: column;
   scroll-margin: 30vh;
   flex: 1;
-  padding: 3vw;
+  padding: 3vh;
   margin-bottom: 10vh;
   background: rgba(255, 255, 255, 0.5) !important;
+  width: 80%;
 }
 
 .portfolio-page p {
@@ -59,7 +69,7 @@
 }
 
 .active {
-  background: rgba(255, 255, 255, 0.5) !important;
+  background: rgba(255, 255, 255, 0) !important;
 }
 
 .photo {
@@ -74,42 +84,58 @@
 .portfolio-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: auto;
+  align-items: left;
+  align-content: left;
+  align-self: left;
   margin-bottom: 10vh; // Add whitespace between project containers
+  min-width: 0;
+  overflow-x: scroll;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 900px) {
   .portfolio-container {
     flex-direction: column;
     display: flex;
+    overflow-x: scroll;
+    min-width: 0;
   }
 
   .photo {
     flex-direction: column;
     display: flex;
     padding: 3vw;
-    max-height: 50vh;
-    width: auto;
+    max-width: 50vw;
     object-fit: cover;
+  }
+  .side-bar {
+    display: none;
+  }
+
+  .nav {
+    font-size: calc(1vh + 0.5vw);
+    font-family: "Winky Sans", sans-serif;
+
+    color: rgba(64, 13, 1, 0);
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 900px) {
   .cv {
     margin-left: -20vw;
+    margin-right: -20vw;
     margin-top: 10vh;
   }
   .portfolio-container {
     flex-direction: row;
-    align-items: stretch;
-    justify-content: space-evenly;
+    align-content: left;
+    min-width: 0;
+    justify-content: left;
   }
 
   .photo {
     width: 90%;
     margin-bottom: 5vh;
+    min-width: none;
     align-self: center;
     align-content: center;
     object-fit: cover;
