@@ -5,8 +5,8 @@
 
 .main {
   display: block;
-  height: 70vh;
-  padding: 10vh;
+  height: calc(90vh - 10vw);
+  padding: 5vw;
   font-family: "Winky Sans", sans-serif;
   font-weight: 300;
   text-align: justify;
@@ -30,14 +30,14 @@
   height: 10vh !important;
   font-family: "Winky Sans", sans-serif;
   font-weight: 800;
-  font-size: calc(1vh + 1vw);
+  font-size: calc(2vw);
 }
 
 ::ng-deep .mat-mdc-tab.mdc-tab {
   height: 10vh !important;
   font-family: "Winky Sans", sans-serif;
   font-weight: 800;
-  font-size: calc(1vh + 1vw);
+  font-size: calc(2vw);
 }
 
 .below-footer {

@@ -12,12 +12,16 @@
   width: 22vw;
   margin-top: -10vh; //Deze moet van 0 naar dit voor animatie
 }
+.nav {
+  font-size: calc(1vh + 0.5vw);
+}
 
 .nav-bar {
   color: rgba(255, 255, 255, 0.5);
   position: sticky;
-  top: 20vh;
+  top: 10vh;
   width: 22vw;
+  max-width: 22vw;
   margin-top: 10vh; //Deze moet van 0 naar dit voor animatie
 }
 
@@ -35,23 +39,26 @@
 }
 
 .project-page p {
-  margin: 0.2em; // Reduce paragraph breaks
+  margin: 0.2em;
+  font-size: 2vh;
 }
 
 .project-page h3 {
-  margin: 0.2em; // Reduce heading breaks
+  margin: 0.2em;
   font-weight: 100;
   text-align: end;
+  font-size: 2vh;
 }
 .project-page h2 {
-  margin: 0.2em; // Reduce heading breaks
+  margin: 0.2em;
   font-family: "Winky Sans", sans-serif;
   font-weight: 500;
+  font-size: 3vh;
 }
 .project-page h1 {
-  margin: 0.2em; // Reduce heading breaks
+  margin: 0.2em;
+  font-size: 4vh;
 }
-
 .active {
   background: rgba(255, 255, 255, 0.5) !important;
 }
@@ -75,7 +82,7 @@
   margin-bottom: 10vh; // Add whitespace between project containers
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1200px) {
   .project-container {
     flex-direction: column;
     display: flex;
@@ -96,7 +103,7 @@
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1200px) {
   .project-container {
     flex-direction: row;
     align-items: stretch;

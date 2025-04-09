@@ -1,6 +1,6 @@
 .text {
   height: 100%;
-  font-size: calc(4vw + 2vh);
+  font-size: calc(3vw + 4vh);
   font-weight: 300;
   color: rgba(64, 13, 1, 1);
 }
@@ -8,7 +8,7 @@
 .red {
   background-color: rgba(226, 15, 121, 0.8);
   color: white;
-  padding: 1vh;
+  padding: 2vh;
 }
 
 .orange {
@@ -19,16 +19,16 @@
 .yellow {
   background-color: rgba(250, 220, 29, 0.8);
   color: white;
-  padding: 3vh;
+  padding: 2vh;
 }
 
 .blue {
   background-color: rgba(82, 155, 249, 0.8);
   color: white;
-  padding: 2vw;
+  padding: 2vh;
 }
 .violet {
   background-color: rgba(229, 95, 0, 0.8);
   color: white;
-  padding: 1vw;
+  padding: 2vh;
 }

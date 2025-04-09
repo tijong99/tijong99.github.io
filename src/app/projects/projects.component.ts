@@ -28,7 +28,8 @@ export class ProjectsComponent {
   projectList: Project[] = [
     {
       image: '../../assets/FMP.JPG',
-      title: 'FMP (M21) - Metalmorphosis',
+      title: 'FMP (M21)',
+      line: 'Metalmorphosis',
       content: {
         heading: 'FMP (M21) - Metalmorphosis',
         subheading:
@@ -39,7 +40,9 @@ export class ProjectsComponent {
     },
     {
       image: '../../assets/Oids.png',
-      title: 'M12 - The Oids',
+      title: 'M12 ',
+
+      line: 'The Oids',
       content: {
         heading: 'M12 - The Oids',
         subheading:
@@ -54,7 +57,8 @@ export class ProjectsComponent {
 
     {
       image: '../../assets/RT.png',
-      title: 'M11 - Radical Transparency',
+      title: 'M11',
+      line: 'Radical Transparency',
       content: {
         heading: 'M11 - Radical Transparency',
         subheading:
@@ -70,7 +74,8 @@ export class ProjectsComponent {
     },
     {
       image: '../../assets/Rectum.png',
-      title: 'Anatomy in silver',
+      title: 'EX',
+      line: 'Anatomy in silver',
       content: {
         heading: 'Anatomy in silver',
         subheading: 'Creating silver jewelry from medical imagery',
@@ -83,8 +88,9 @@ export class ProjectsComponent {
       },
     },
     {
-      image: '../../assets/Ballroom.png',
-      title: 'Ballroom',
+      image: '../../assets/ballroom.jpeg',
+      title: 'EX',
+      line: 'Ballroom',
       content: {
         heading: 'Ballroom',
         subheading: 'Moved by light',
@@ -98,7 +104,8 @@ export class ProjectsComponent {
     },
     {
       image: '../../assets/CollectingCompassion.png',
-      title: 'Collecting Compassion',
+      title: 'EX',
+      line: 'Collecting compassion',
       content: {
         heading: 'Collecting Compassion',
         subheading:
@@ -111,8 +118,9 @@ export class ProjectsComponent {
       },
     },
     {
-      image: '../../assets/EenEindjeMooierTunnel.png',
-      title: 'Een eindje Mooier',
+      image: '../../assets/eem.jpeg',
+      title: 'EX',
+      line: 'Een eindje mooier',
       content: {
         heading: 'Een eindje Mooier',
         subheading: 'Guerilla hacking of public lighting',
@@ -125,8 +133,9 @@ export class ProjectsComponent {
       },
     },
     {
-      image: '../../assets/UrbanMycelium.png',
-      title: 'Urban mycelium',
+      image: '../../assets/UM.png',
+      title: 'EX',
+      line: 'Urban mycelium',
       content: {
         heading: 'Urban mycelium',
         subheading:
@@ -139,10 +148,11 @@ export class ProjectsComponent {
       },
     },
     {
-      image: '../../assets/Consultancy.png',
-      title: 'Uncommon Public Lighting',
+      image: '../../assets/Muni.png',
+      title: 'EX',
+      line: 'freelance',
       content: {
-        heading: 'Uncommon Public Lighting',
+        heading: 'Uncommon Public Lighting consultancy',
         subheading:
           'Creatively converging municipalities and industry to develop novel public lighting concepts for yet unsolved characteristic cases',
         date: 'June 2023 – June 2024',
@@ -196,6 +206,7 @@ export class ProjectsComponent {
 export interface Project {
   title: string;
   image: string;
+  line: string;
   content: {
     heading: string;
     subheading?: string;

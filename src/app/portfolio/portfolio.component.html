@@ -1,63 +1,274 @@
 <div class="container">
-  
-  <div>
-    <div
-      *ngFor="let portfolio of portfolioList"
-      class="portfolio-container"
-      #portfolioPage
-      [id]="portfolio.title"
-    >
-      <img class="photo" [src]="portfolio.image" [alt]="portfolio.title" />
-      <div class="portfolio-page">
-        <h1>{{ portfolio.content.heading }}</h1>
-        <h2 *ngIf="portfolio.content.subheading">{{ portfolio.content.subheading }}</h2>
-        <h3 *ngIf="portfolio.content.date"><em>{{ portfolio.content.date }}</em></h3>
-        <p *ngFor="let paragraph of portfolio.content.paragraphs">{{ paragraph }}</p>
+  <div class="content">
+    <div class="portfolio-page">
+      <div class="photo">
+        <img src="../../assets/palette.png" alt="Palette" />
       </div>
     </div>
-    <div *ngFor="let portfolio of portfolioList" id="{{ portfolio.title }}" class="portfolio-section">
-      <h2>{{ portfolio.content.heading }}</h2>
-      <div *ngIf="portfolio.title === 'Past-Present-Future'" class="three-columns">
-        <div class="column">
-          <p *ngFor="let paragraph of portfolio.content.paragraphs.slice(0, portfolio.content.paragraphs.length / 3)">{{ paragraph }}</p>
-        </div>
-        <div class="column">
-          <p *ngFor="let paragraph of portfolio.content.paragraphs.slice(portfolio.content.paragraphs.length / 3, 2 * portfolio.content.paragraphs.length / 3)">{{ paragraph }}</p>
-        </div>
-        <div class="column">
-          <p *ngFor="let paragraph of portfolio.content.paragraphs.slice(2 * portfolio.content.paragraphs.length / 3)">{{ paragraph }}</p>
-        </div>
+    <div class="portfolio-container" #portfolioPage id="Professional Identity">
+      <div class="portfolio-page">
+        <h1>Professional Identity</h1>
+        <p>
+          I am a designer who is driven by change and innovation through
+          experiences that transform societies. With technology at the heart of
+          every idea, I aim to reshape our relationship with the things in our
+          world.
+        </p>
+        <p>
+          To achieve this, I rely on artistic processes—because that is what I
+          believe in. I have moved beyond the modernist paradigm of data-driven,
+          cause-and-effect thinking in which I was trained as a physicist.
+          Instead, I see greater potential in innovation approaches rooted in
+          values, intuition, and experimentation—methods often inspired by the
+          arts. The result: designs that are more expressive and deeply
+          connected to the world.
+        </p>
+        <p>
+          In a world where many shy away from complexity, I believe innovation
+          thrives by embracing it. I do this by engaging with everything I
+          encounter on design journeys—colleagues, stakeholders, materials, and
+          methods. When true alignment exists, there is no friction, only
+          momentum toward shared goals. This demands value-based leadership and
+          trust in the world around us.
+        </p>
+        <p>
+          The freedom I need to fully commit to this way of working is fueled by
+          my entrepreneurial spirit. I am self-directed and bring my full,
+          authentic self to the table every day, inspiring others to join in. I
+          proactively seek opportunities and feedback, driven by a deep
+          motivation to contribute to the public domain—transforming the
+          everyday through innovative spatial experiences.
+        </p>
       </div>
-      <div *ngIf="portfolio.title !== 'Past-Present-Future'">
-        <p *ngFor="let paragraph of portfolio.content.paragraphs">{{ paragraph }}</p>
+      <div class="portfolio-page">
+        <h1>Vision</h1>
+        <p>
+          The physical and natural world is filled with affective, rich
+          complexity. But can’t we also make it effective?
+        </p>
+        <p>
+          Since Descartes, the development of technology and Anthropocene
+          systems has been driven by analysis, control, and instrumentation.
+          This has shaped a modernist world where complexity is treated as an
+          antagonist—hidden, confined, and minimized. While this approach has
+          propelled our species forward, it has also led to colonialism, climate
+          catastrophe, and the erosion of our own existence.
+        </p>
+        <p>
+          This mindset severely limits the creative potential already embedded
+          in the world. Nature itself reveals boundless possibilities, emerging
+          from the open-ended, complex making-practice we call evolution. I
+          propose a different approach: rather than suppressing complexity, we
+          should shape it into a benign force—one we can harness and experience
+          in all its richness.
+        </p>
+        <p>
+          By doing so, we can break the vicious cycle of problem-solving and the
+          inevitable problem-making that follows. Instead of reducing
+          complexity, we should embrace it as a resource, bringing forward the
+          deeply embedded mechanisms that already exist in the world.
+        </p>
+      </div>
+    </div>
+
+    <div class="portfolio-container" #portfolioPage id="Past-Present-Future">
+      <div class="portfolio-page">
+        <h1>Past</h1>
+        <p>
+          With a bachelor's degree in applied physics, I specialized in using
+          various computational techniques, working with data and programming.
+          However, I found little enjoyment in this and felt at odds with the
+          way these models and data framed our understanding of the world—too
+          rigid, too singular. Seeking a more open and exploratory approach, I
+          transitioned to industrial design, where I could engage with the world
+          in a more creatively stimulating way.
+        </p>
+        <p>
+          In the years following this shift, I struggled to articulate my vision
+          and define my contribution within this artistic approach. My early
+          ideas revolved around making the world more experienceable and vivid,
+          which led me to focus on developing high-quality prototypes. I labeled
+          myself a creative technologist.
+        </p>
+        <p>
+          During this period, I developed broadly as a professional through a
+          wide range of extracurricular activities: founding and leading student
+          teams, working as a freelance public lighting consultant for
+          municipalities, conducting research for publication in medical
+          journals, initiating street art projects, and even writing critical
+          letters to the university board—ultimately collaborating with them to
+          shape and implement new policies.
+        </p>
+      </div>
+      <div class="portfolio-page">
+        <h1>Present</h1>
+        <p>
+          At the Transforming Practices squad, I discovered how my education in
+          physics has shaped the way I perceive the world. This environment
+          provided me with the perspectives, theories, approaches, and
+          vocabulary to develop my design practice—ensuring it is both
+          theoretically grounded and impactful.
+        </p>
+        <p>
+          Teachings within the TP squad, such as post-phenomenology, reinforced
+          the idea that the world is not merely an analytical and measurable
+          reality but rather in a continuous state of becoming.
+        </p>
+        <p>
+          My FMP project allowed me to merge the unique skills from physics with
+          an artistic endeavor, creating a project that is deeply connected to
+          research-through-design while maintaining high-quality prototypes.
+        </p>
+      </div>
+      <div class="portfolio-page">
+        <h1>Future</h1>
+        <p>
+          As I look toward the open future ahead, I am unsure of the exact path
+          I need to take. I seek an environment where I can continue to imagine
+          new ways of seeing and shaping the world—one that embraces complexity
+          rather than reduces it. I want this to be constructive and
+          sustainable, without relying on creative subsidies.
+        </p>
+        <p>
+          This is why I am eager to work in the public domain, where the
+          potential for meaningful impact is high.
+        </p>
+        <p>
+          Could this mean rebuilding the system from within, as a healthy yet
+          recalcitrant young civil servant?
+        </p>
+        <p>
+          Could teaching or researching design be part of this contribution?
+        </p>
+        <p>
+          Is there space to develop my own design practice—through a studio
+          where I can refine, specify, and bring my vision into the world?
+        </p>
+      </div>
+    </div>
+
+    <div class="portfolio-container" #portfolioPage id="CV">
+      <div class="portfolio-page">
+        <h1>Curriculum Vitae</h1>
+        <h2>Personalia</h2>
+        <p><strong>Tim de Jong</strong></p>
+        <p><em>02 - 08 - 1999</em></p>
+        <p><em>Almere</em></p>
+        <p><strong>Contact</strong></p>
+        <p><em>+31(0)6 1523 7425</em></p>
+        <p><em>tijong&#64;gmail.com</em></p>
+      </div>
+
+      <div class="portfolio-page">
+        <div class="cv">
+          <h2>Experience</h2>
+          <p>
+            <em>Januari 2025 – Present</em> | <strong>Scape Agency</strong> |
+            Designer and Material researcher
+          </p>
+          <p>
+            <em>September 2024 - Januari 2025</em> |
+            <strong>Scape Agency</strong> | Design intern
+          </p>
+          <p>
+            <em>May 2023 - Present</em> | <strong>LichtstudioTM</strong> |
+            Freelance R&D for public lighting
+          </p>
+          <p>
+            <em>December 2021 - May 2022</em> |
+            <strong>SPACES (Startup)</strong> | Concept
+          </p>
+          <p>
+            <em>December 2020 - December 2021</em> | <strong>GLOW</strong> |
+            Workgroup campus area and Project manager
+          </p>
+          <p>
+            <em>September 2020 - Januari 2022</em> |
+            <strong>Team IGNITE</strong> | Founder and Lead design conception
+          </p>
+          <p>
+            <em>March 2020 - November 2020</em> | <strong>VERO</strong> |
+            Experimental physicist aerosol dynamics
+          </p>
+          <p>
+            <em>November 2018 - September 2019</em> |
+            <strong>Applied Micro Electronics</strong> | Production engineer
+          </p>
+
+          <h2>Education</h2>
+          <p>
+            <em>2022 - now</em> | <strong>TU/e</strong> | Master of Industrial
+            Design
+          </p>
+          <p>
+            <em>2021 - 2022</em> | <strong>TU/e</strong> | Pre-Master of
+            Industrial Design
+          </p>
+          <p>
+            <em>2017 – 2021</em> | <strong>TU/e</strong> | Bachelor of Applied
+            Physics
+          </p>
+          <p>
+            <em>2011 – 2017</em> | <strong>Oostvaarders College</strong> |
+            Kunstklas Atheneum NT/NG
+          </p>
+
+          <h2>Expositions</h2>
+          <p>
+            <em>Februari 2024</em> |
+            <strong>Innovative low-light signage</strong> | Highlight Delft
+          </p>
+          <p>
+            <em>Januari 2024</em> | <strong>A Growing City</strong> |
+            Light-streetart in Eindhoven
+          </p>
+          <p>
+            <em>Juni 2021 - 2024</em> | <strong>Een Eindje Mooier</strong> |
+            Streetart commission by Eindhoven
+          </p>
+          <p>
+            <em>April 2022 - September 2022</em> |
+            <strong>Collecting Compassion</strong> | Commission by
+            innovationSpace
+          </p>
+          <p>
+            <em>May 2023</em> | <strong>Collecting Compassion</strong> | Museum
+            Bonnefanten
+          </p>
+          <p>
+            <em>November 2021</em> | <strong>Ballroom</strong> | GLOW 2021
+            (Winner Young Talent Award)
+          </p>
+          <p>
+            <em>October 2020</em> | <strong>Expeditie Spinvis</strong> | Drivers
+            of Change at DDW
+          </p>
+        </div>
       </div>
     </div>
   </div>
+
   <div class="side-bar">
     <div class="nav-bar">
       <mat-list role="list">
         <mat-list-item
-          (click)="scrollToPortfolio('About Me')"
+          class="active"
+          (click)="scrollToPortfolio('Professional Identity')"
           role="listitem"
         >
-          About Me
+          PIV - Professional Identity and Vision
         </mat-list-item>
+
         <mat-list-item
-          (click)="scrollToPortfolio('Portfolio')"
+          (click)="scrollToPortfolio('Past-Present-Future')"
           role="listitem"
         >
-          Portfolio
+          Past-Present-Future
         </mat-list-item>
-        <mat-list-item
-          *ngFor="let portfolio of portfolioList"
-          [class.active]="detectedPortfoliopage == portfolio.title"
-          (click)="scrollToPortfolio(portfolio.title)"
-          role="listitem"
-        >
-          {{ portfolio.title }}
+        <mat-list-item (click)="scrollToPortfolio('CV')" role="listitem">
+          CV
         </mat-list-item>
       </mat-list>
     </div>
   </div>
-
 </div>

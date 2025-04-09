@@ -8,7 +8,8 @@
           (click)="scrollToProject(project.title)"
           role="listitem"
         >
-          {{ project.title }}
+          <span matListItemTitle>{{ project.line }}</span>
+          <span matListItemLine>{{ project.title }}</span>
         </mat-list-item>
       </mat-list>
     </div>
@@ -24,11 +25,16 @@
       <img class="photo" [src]="project.image" [alt]="project.title" />
       <div class="project-page">
         <h1>{{ project.content.heading }}</h1>
-        <h2 *ngIf="project.content.subheading">{{ project.content.subheading }}</h2>
-        <h3 *ngIf="project.content.date"><em>{{ project.content.date }}</em></h3>
-        <p *ngFor="let paragraph of project.content.paragraphs">{{ paragraph }}</p>
+        <h2 *ngIf="project.content.subheading">
+          {{ project.content.subheading }}
+        </h2>
+        <h3 *ngIf="project.content.date">
+          <em>{{ project.content.date }}</em>
+        </h3>
+        <p *ngFor="let paragraph of project.content.paragraphs">
+          {{ paragraph }}
+        </p>
       </div>
     </div>
   </div>
 </div>
-

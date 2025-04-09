@@ -20,33 +20,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 })
 export class PortfolioComponent {
   @ViewChildren('portfolioPage', { read: ElementRef })
-  portfolioPages: QueryList<ElementRef>; // Ensure matches 'portfolioPages'
+  portfolioPages: QueryList<ElementRef>;
 
-  detectedPortfoliopage: string = ''; // Ensure matches 'detectedPortfoliopage'
-
-  portfolioList: Portfolio[] = [
-    // Ensure matches 'portfolioList'
-    {
-      image: '../../assets/Portfolio1.png',
-      title: 'Portfolio 1',
-      content: {
-        heading: 'Portfolio 1',
-        subheading: 'Subheading for Portfolio 1',
-        date: 'January 2023',
-        paragraphs: ['Lorem ipsum dolor sit amet...', 'More details here...'],
-      },
-    },
-    {
-      image: '../../assets/Portfolio2.png',
-      title: 'Portfolio 2',
-      content: {
-        heading: 'Portfolio 2',
-        subheading: 'Subheading for Portfolio 2',
-        date: 'February 2023',
-        paragraphs: ['Lorem ipsum dolor sit amet...', 'More details here...'],
-      },
-    },
-  ];
+  detectedPortfoliopage: string = '';
 
   constructor(private renderer: Renderer2) {
     this.renderer.listen(
@@ -78,18 +54,7 @@ export class PortfolioComponent {
   }
 
   scrollToPortfolio(title: string) {
-    let el = document.getElementById(title); // Ensure matches 'title'
+    let el = document.getElementById(title);
     el?.scrollIntoView({ behavior: 'smooth' });
   }
-}
-
-export interface Portfolio {
-  title: string;
-  image: string;
-  content: {
-    heading: string;
-    subheading?: string;
-    date?: string;
-    paragraphs: string[];
-  };
 }
