@@ -15,7 +15,8 @@
   color: rgba(255, 255, 255, 0.19);
   padding: 40px;
   width: 20vw;
-  margin-top: -10vh; //Deze moet van 0 naar dit voor animatie
+  animation: navBarSlideIn 0.5s ease-out; // Adjust duration and easing as needed
+  margin-top: -10vh;
 }
 .nav {
   font-size: calc(1vh + 0.5vw);
@@ -139,5 +140,14 @@
     align-self: center;
     align-content: center;
     object-fit: cover;
+  }
+}
+
+@keyframes navBarSlideIn {
+  from {
+    margin-top: 0vh;
+  }
+  to {
+    margin-top: -10vh;
   }
 }

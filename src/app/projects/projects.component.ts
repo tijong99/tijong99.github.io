@@ -6,20 +6,24 @@ import {
   QueryList,
   Renderer2,
   ViewChildren,
+  CUSTOM_ELEMENTS_SCHEMA,
 } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { DomSanitizer } from '@angular/platform-browser';
+import { KtdGridModule } from '@katoid/angular-grid-layout';
 
 @Component({
   selector: 'app-projects',
-  imports: [MatSidenavModule, MatListModule, CommonModule],
+  standalone: true,
+  imports: [MatSidenavModule, MatListModule, CommonModule, KtdGridModule], // Removed NgxPackeryModule
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Added CUSTOM_ELEMENTS_SCHEMA
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss',
+  styleUrls: ['./projects.component.scss'],
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements AfterViewInit {
   @ViewChildren('projectPage', { read: ElementRef })
   projectPages: QueryList<ElementRef>;
 
@@ -28,6 +32,17 @@ export class ProjectsComponent {
   projectList: Project[] = [
     {
       image: '../../assets/FMP.JPG',
+      images: [
+        '../../assets/FMP.JPG',
+        '../../assets/Oids.png',
+        '../../assets/RT.png',
+        '../../assets/Rectum.png',
+        '../../assets/ballroom.jpeg',
+        '../../assets/CollectingCompassion.png',
+        '../../assets/eem.jpeg',
+        '../../assets/UM.png',
+        '../../assets/Muni.png',
+      ],
       title: 'FMP (M21)',
       line: 'Metalmorphosis',
       content: {
@@ -40,6 +55,17 @@ export class ProjectsComponent {
     },
     {
       image: '../../assets/Oids.png',
+      images: [
+        '../../assets/FMP.JPG',
+        '../../assets/Oids.png',
+        '../../assets/RT.png',
+        '../../assets/Rectum.png',
+        '../../assets/ballroom.jpeg',
+        '../../assets/CollectingCompassion.png',
+        '../../assets/eem.jpeg',
+        '../../assets/UM.png',
+        '../../assets/Muni.png',
+      ],
       title: 'M12 ',
 
       line: 'The Oids',
@@ -57,6 +83,17 @@ export class ProjectsComponent {
 
     {
       image: '../../assets/RT.png',
+      images: [
+        '../../assets/FMP.JPG',
+        '../../assets/Oids.png',
+        '../../assets/RT.png',
+        '../../assets/Rectum.png',
+        '../../assets/ballroom.jpeg',
+        '../../assets/CollectingCompassion.png',
+        '../../assets/eem.jpeg',
+        '../../assets/UM.png',
+        '../../assets/Muni.png',
+      ],
       title: 'M11',
       line: 'Radical Transparency',
       content: {
@@ -74,6 +111,17 @@ export class ProjectsComponent {
     },
     {
       image: '../../assets/Rectum.png',
+      images: [
+        '../../assets/FMP.JPG',
+        '../../assets/Oids.png',
+        '../../assets/RT.png',
+        '../../assets/Rectum.png',
+        '../../assets/ballroom.jpeg',
+        '../../assets/CollectingCompassion.png',
+        '../../assets/eem.jpeg',
+        '../../assets/UM.png',
+        '../../assets/Muni.png',
+      ],
       title: 'EX',
       line: 'Anatomy in silver',
       content: {
@@ -89,6 +137,17 @@ export class ProjectsComponent {
     },
     {
       image: '../../assets/ballroom.jpeg',
+      images: [
+        '../../assets/FMP.JPG',
+        '../../assets/Oids.png',
+        '../../assets/RT.png',
+        '../../assets/Rectum.png',
+        '../../assets/ballroom.jpeg',
+        '../../assets/CollectingCompassion.png',
+        '../../assets/eem.jpeg',
+        '../../assets/UM.png',
+        '../../assets/Muni.png',
+      ],
       title: 'EX',
       line: 'Ballroom',
       content: {
@@ -104,6 +163,17 @@ export class ProjectsComponent {
     },
     {
       image: '../../assets/CollectingCompassion.png',
+      images: [
+        '../../assets/FMP.JPG',
+        '../../assets/Oids.png',
+        '../../assets/RT.png',
+        '../../assets/Rectum.png',
+        '../../assets/ballroom.jpeg',
+        '../../assets/CollectingCompassion.png',
+        '../../assets/eem.jpeg',
+        '../../assets/UM.png',
+        '../../assets/Muni.png',
+      ],
       title: 'EX',
       line: 'Collecting compassion',
       content: {
@@ -119,6 +189,17 @@ export class ProjectsComponent {
     },
     {
       image: '../../assets/eem.jpeg',
+      images: [
+        '../../assets/FMP.JPG',
+        '../../assets/Oids.png',
+        '../../assets/RT.png',
+        '../../assets/Rectum.png',
+        '../../assets/ballroom.jpeg',
+        '../../assets/CollectingCompassion.png',
+        '../../assets/eem.jpeg',
+        '../../assets/UM.png',
+        '../../assets/Muni.png',
+      ],
       title: 'EX',
       line: 'Een eindje mooier',
       content: {
@@ -134,6 +215,17 @@ export class ProjectsComponent {
     },
     {
       image: '../../assets/UM.png',
+      images: [
+        '../../assets/FMP.JPG',
+        '../../assets/Oids.png',
+        '../../assets/RT.png',
+        '../../assets/Rectum.png',
+        '../../assets/ballroom.jpeg',
+        '../../assets/CollectingCompassion.png',
+        '../../assets/eem.jpeg',
+        '../../assets/UM.png',
+        '../../assets/Muni.png',
+      ],
       title: 'EX',
       line: 'Urban mycelium',
       content: {
@@ -149,6 +241,17 @@ export class ProjectsComponent {
     },
     {
       image: '../../assets/Muni.png',
+      images: [
+        '../../assets/FMP.JPG',
+        '../../assets/Oids.png',
+        '../../assets/RT.png',
+        '../../assets/Rectum.png',
+        '../../assets/ballroom.jpeg',
+        '../../assets/CollectingCompassion.png',
+        '../../assets/eem.jpeg',
+        '../../assets/UM.png',
+        '../../assets/Muni.png',
+      ],
       title: 'EX',
       line: 'freelance',
       content: {
@@ -201,11 +304,27 @@ export class ProjectsComponent {
     let el = document.getElementById(title);
     el?.scrollIntoView({ behavior: 'smooth' });
   }
+
+  overlayVisible: boolean = false;
+  overlayImages: string[] = [];
+
+  showOverlay(images: string[]) {
+    this.overlayImages = images;
+    this.overlayVisible = true;
+  }
+
+  hideOverlay() {
+    this.overlayVisible = false;
+    this.overlayImages = [];
+  }
+
+  ngAfterViewInit() {}
 }
 
 export interface Project {
   title: string;
   image: string;
+  images: string[];
   line: string;
   content: {
     heading: string;

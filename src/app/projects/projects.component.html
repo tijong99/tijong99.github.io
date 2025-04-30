@@ -22,7 +22,9 @@
       #projectPage
       [id]="project.title"
     >
-      <img class="photo" [src]="project.image" [alt]="project.title" />
+      <div class="photo-cont" (mouseover)="showOverlay(project.images)">
+        <img class="photo" [src]="project.image" [alt]="project.title" />
+      </div>
       <div class="project-page">
         <h1>{{ project.content.heading }}</h1>
         <h2 *ngIf="project.content.subheading">
@@ -36,5 +38,16 @@
         </p>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- Overlay for fullscreen images -->
+<div class="image-overlay" *ngIf="overlayVisible" (click)="hideOverlay()">
+  <div class="overlay-grid">
+    <ktd-grid cols="3" rowheight="1" class="photoGrids">
+      <ktd-griditem *ngFor="let image of overlayImages">
+        <img class="img" [src]="image" alt="Fullscreen Image" />
+      </ktd-griditem>
+    </ktd-grid>
   </div>
 </div>

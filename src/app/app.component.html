@@ -11,7 +11,9 @@
     <mat-tab-group
       class="red"
       (selectedTabChange)="selectedTabChange($event)"
-      [selectedIndex]="pageSelected === 'projects' ? 0 : pageSelected === 'portfolio' ? 4 : 1"
+      [selectedIndex]="
+        pageSelected === 'projects' ? 0 : pageSelected === 'portfolio' ? 4 : 1
+      "
       animationDuration="1500ms"
       headerPosition="below"
       mat-stretch-tabs="true"
@@ -20,7 +22,7 @@
       fitInkBarToContent
     >
       <mat-tab label="Projects"></mat-tab>
-      <mat-tab disabled label="tim de Jong"></mat-tab>
+      <mat-tab disabled label="Tim de Jong"></mat-tab>
       <mat-tab label="About me"></mat-tab>
     </mat-tab-group>
   </div>
