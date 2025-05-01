@@ -13,12 +13,11 @@ import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { DomSanitizer } from '@angular/platform-browser';
-import { KtdGridModule } from '@katoid/angular-grid-layout';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [MatSidenavModule, MatListModule, CommonModule, KtdGridModule], // Removed NgxPackeryModule
+  imports: [MatSidenavModule, MatListModule, CommonModule], // Removed NgxPackeryModule
   schemas: [CUSTOM_ELEMENTS_SCHEMA], // Added CUSTOM_ELEMENTS_SCHEMA
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
@@ -42,6 +41,8 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/eem.jpeg',
         '../../assets/UM.png',
         '../../assets/Muni.png',
+        'FACT 1: This project took 6 months to complete.',
+        'FACT 2: Inspired by nature.',
       ],
       title: 'FMP (M21)',
       line: 'Metalmorphosis',
@@ -65,6 +66,8 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/eem.jpeg',
         '../../assets/UM.png',
         '../../assets/Muni.png',
+        'FACT 1: Over 50 iterations were made.',
+        'FACT 2: Uses magnets for interaction.',
       ],
       title: 'M12 ',
 
@@ -93,6 +96,8 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/eem.jpeg',
         '../../assets/UM.png',
         '../../assets/Muni.png',
+        'FACT 1: Stakeholders experienced prototypes firsthand.',
+        'FACT 2: Designed to facilitate transparency discussions.',
       ],
       title: 'M11',
       line: 'Radical Transparency',
@@ -121,6 +126,8 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/eem.jpeg',
         '../../assets/UM.png',
         '../../assets/Muni.png',
+        'FACT 1: Based on medical imagery.',
+        'FACT 2: Created using lost wax casting.',
       ],
       title: 'EX',
       line: 'Anatomy in silver',
@@ -147,6 +154,8 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/eem.jpeg',
         '../../assets/UM.png',
         '../../assets/Muni.png',
+        'FACT 1: Designed post-COVID for social distancing.',
+        'FACT 2: Featured at GLOW 2021.',
       ],
       title: 'EX',
       line: 'Ballroom',
@@ -173,6 +182,8 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/eem.jpeg',
         '../../assets/UM.png',
         '../../assets/Muni.png',
+        'FACT 1: Created to support Ukraine during the war.',
+        'FACT 2: Interactive experience with heart projections.',
       ],
       title: 'EX',
       line: 'Collecting compassion',
@@ -199,6 +210,8 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/eem.jpeg',
         '../../assets/UM.png',
         '../../assets/Muni.png',
+        'FACT 1: Guerrilla light street art.',
+        'FACT 2: Inspired by urban development processes.',
       ],
       title: 'EX',
       line: 'Een eindje mooier',
@@ -225,6 +238,8 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/eem.jpeg',
         '../../assets/UM.png',
         '../../assets/Muni.png',
+        'FACT 1: Highlights unused urban potential.',
+        'FACT 2: Inspired by natural ecosystems.',
       ],
       title: 'EX',
       line: 'Urban mycelium',
@@ -251,7 +266,10 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/eem.jpeg',
         '../../assets/UM.png',
         '../../assets/Muni.png',
+        'FACT 1: Developed 16 design concepts.',
+        'FACT 2: Evaluated through UX surveys and workshops.',
       ],
+
       title: 'EX',
       line: 'freelance',
       content: {
@@ -309,13 +327,24 @@ export class ProjectsComponent implements AfterViewInit {
   overlayImages: string[] = [];
 
   showOverlay(images: string[]) {
-    this.overlayImages = images;
+    this.overlayImages = this.shuffleArray(images); // Shuffle images before displaying
     this.overlayVisible = true;
   }
 
   hideOverlay() {
     this.overlayVisible = false;
     this.overlayImages = [];
+  }
+
+  shuffleArray(array: string[]): string[] {
+    return array
+      .map((value) => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value);
+  }
+
+  isImage(url: string): boolean {
+    return /\.(jpg|jpeg|png|gif|bmp|webp|svg)$/i.test(url); // Check for common image extensions
   }
 
   ngAfterViewInit() {}
