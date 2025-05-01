@@ -1,6 +1,7 @@
 @use "@angular/material" as mat;
 
 .home-container {
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .main {
@@ -11,12 +12,21 @@
   font-weight: 300;
   text-align: justify;
 }
+.whitebackground {
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 3;
+  display: block;
+  position: sticky;
+  height: auto;
+  width: auto;
+  margin-bottom: -10vh;
+}
 
 .footer {
   display: block;
   position: sticky;
   max-width: 100vw;
-  z-index: 3;
+  z-index: 4;
 }
 .red {
   @include mat.tabs-overrides(
