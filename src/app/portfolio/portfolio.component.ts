@@ -6,6 +6,8 @@ import {
   QueryList,
   Renderer2,
   ViewChildren,
+  EventEmitter,
+  Output,
 } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
@@ -21,6 +23,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 export class PortfolioComponent {
   @ViewChildren('portfolioPage', { read: ElementRef })
   portfolioPages: QueryList<ElementRef>;
+
+  @Output() navigateToProjectEvent = new EventEmitter<string>();
 
   detectedPortfoliopage: string = '';
 
@@ -56,5 +60,9 @@ export class PortfolioComponent {
   scrollToPortfolio(title: string) {
     let el = document.getElementById(title);
     el?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  navigateToProject(projectTitle: string) {
+    this.navigateToProjectEvent.emit(projectTitle);
   }
 }

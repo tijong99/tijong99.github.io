@@ -225,9 +225,8 @@
 
 .img {
   width: auto; // Ensure images fill their container
-  height: auto; // Maintain aspect ratio
-  max-width: 44vw;
-  max-height: 30vh;
+  height: auto; // Maintain aspect rati
+  max-height: 33vh;
   transition: opacity 0.3s ease; // Smooth fade effect
   opacity: 0.8;
 }
@@ -257,4 +256,16 @@
   font-size: 3vh; // Match the heading font size
   text-align: left; // Center text
   padding: 3px;
+}
+
+.pink-link {
+  color: rgba(226, 15, 121, 0.8); /* Same pink as homepage highlight */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.pink-link:hover {
+  color: rgba(226, 15, 121, 1); /* Slightly brighter on hover */
+  text-decoration: underline;
 }

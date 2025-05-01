@@ -1,6 +1,6 @@
 import { MatTabChangeEvent, MatTabsModule } from '@angular/material/tabs';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -18,6 +18,9 @@ import { ProjectsComponent } from './projects/projects.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  @ViewChild('projectsComponent', { read: ElementRef })
+  projectsComponent: ElementRef;
+
   pageSelected: string = '';
 
   constructor() {
@@ -44,5 +47,15 @@ export class AppComponent {
       default:
         this.pageSelected = '';
     }
+  }
+
+  navigateToProject(projectTitle: string) {
+    this.pageSelected = 'projects'; // Switch to the Projects tab
+    setTimeout(() => {
+      const projectElement = this.projectsComponent.nativeElement.querySelector(
+        `#${projectTitle}`
+      );
+      projectElement?.scrollIntoView({ behavior: 'smooth' });
+    }, 0); // Wait for the Projects component to render
   }
 }
