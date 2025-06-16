@@ -19,7 +19,7 @@ export class HomeComponent {
     {
       index: 0,
       list: [' the '],
-      style: '',
+      style: 'text2',
     },
     {
       index: 0,
@@ -28,8 +28,8 @@ export class HomeComponent {
     },
     {
       index: 0,
-      list: [' potential in the complexities of the '],
-      style: '',
+      list: ['potential in the complexities of the '],
+      style: 'text2',
     },
     {
       index: 0,
@@ -38,8 +38,8 @@ export class HomeComponent {
     },
     {
       index: 0,
-      list: [' world. Using  '],
-      style: '',
+      list: ['world. Using  '],
+      style: 'text2',
     },
     {
       index: 0,
@@ -49,7 +49,7 @@ export class HomeComponent {
     {
       index: 0,
       list: [' strategies.  To '],
-      style: '',
+      style: 'text2',
     },
 
     {
@@ -60,7 +60,7 @@ export class HomeComponent {
     {
       index: 0,
       list: [' new ways of  '],
-      style: '',
+      style: 'text2',
     },
     {
       index: 0,
@@ -70,7 +70,7 @@ export class HomeComponent {
     {
       index: 0,
       list: [' sociotechnical  '],
-      style: '',
+      style: 'text2',
     },
     {
       index: 0,
@@ -80,7 +80,7 @@ export class HomeComponent {
     {
       index: 0,
       list: [' that shape it.  '],
-      style: '',
+      style: 'text2',
     },
   ];
 
