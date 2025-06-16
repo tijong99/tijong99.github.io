@@ -52,15 +52,22 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/FMP/WIN_20241129_11_42_22_Pro.jpg',
         'FACT 1: This project took 6 months to complete.',
         'FACT 2: Inspired by nature.',
+        'FACT 3: Incorporated a 4-month biographical study.',
+        'FACT 4: Created 10 watches, 4 rings, 5 pens, and 2 brooches.',
+        'FACT 5: Lab at Amsterdam Fashion Institute (AMFI).',
       ],
       title: 'FMP (M21)',
       line: 'Metalmorphosis',
       content: {
-        heading: 'FMP (M21) - Metalmorphosis',
+        heading: 'FMP (M21) - Timeless, a Chronolabe',
         subheading:
           'Exploring the potential of a novel material through open-ended making, into posthuman jewelry.',
         date: 'Juli 2025 - CA/TR',
-        paragraphs: ['In becoming...'],
+        paragraphs: [
+          'This graduation project zooms out to often overlooked timescales in design, from the gradual deterioration of materials to the products of now becoming fossils of the future. Showing the opportunities of realizing that a design is never finished.',
+          'At its core it proposes a novel material that harnesses the slow dynamics of metal corrosion to produce unique aesthetic expressions that evolve over multiple timescales. By designing a series of trinkets, the project invites reflections on how making, experiencing, and intentionally playfully unmaking with this material can foreground these other-temporal dimensions.',
+          'Through these reflections, in combination with a small diary study, the project contributes to operationalizing longer timescales in design. A repertoire for unmaking – a set of activities designers could utilize to bring the agency of deterioration and multiple timescales to the foreground in their design processes - is presented as a pragmatic tool, alongside conceptual discussions on time-metaphors and notions such as care and authenticity that change through the lens of long timescales.',
+        ],
       },
     },
     {
