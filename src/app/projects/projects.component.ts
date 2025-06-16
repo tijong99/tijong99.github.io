@@ -135,6 +135,26 @@ export class ProjectsComponent implements AfterViewInit {
       },
     },
     {
+      image: '../../assets/ArtTech.png', // Placeholder image path
+      images: [
+        '../../assets/ArtTech.png', // Placeholder image path
+        'https://youtu.be/GmpuFuxuoO4?feature=shared',
+        'FACT 1: TR CA',
+        'FACT 2: EXPERIMENT 8.',
+      ],
+      title: 'Art-Tech ISP',
+      line: 'Experiment Eight',
+      content: {
+        heading: 'Art-Tech innovationspace project',
+        subheading: 'Conveying agency in technological objects',
+        date: 'June 2024',
+        paragraphs: [
+          'Following Ballroom, I continued to explore my fascination with the liveliness of non-living things. In this multidisciplinary project, we investigated additional qualities that shape the perception of agency, ranging from material expression and contextual framing to movement dynamics, through highly embodied ideation processes.',
+          'We qualitatively assessed the perception of agency in our work Experiment Eight: a detailed interactive installation inspired by contemporary dance, experienced by 40 participants.',
+        ],
+      },
+    },
+    {
       image: '../../assets/Rectum.png',
       images: [
         '../../assets/rectum/Rectum.png',
