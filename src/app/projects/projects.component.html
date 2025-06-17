@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="smth">
     <div
       *ngFor="let project of projectList"
       class="project-container"
@@ -38,25 +38,26 @@
         <h3 *ngIf="project.content.date">
           <em>{{ project.content.date }}</em>
         </h3>
-        <p *ngFor="let paragraph of project.content.paragraphs">
-          {{ paragraph }}
-        </p>
+        <p
+          *ngFor="let paragraph of project.content.paragraphs"
+          [innerHTML]="paragraph"
+        ></p>
       </div>
     </div>
-  </div>
 
-  <!-- Overlay for fullscreen images -->
-  <div class="project-container">
-    <div class="image-overlay" *ngIf="overlayVisible" (click)="hideOverlay()">
-      <div class="empty"></div>
-      <div class="overlay-grid">
-        <div *ngFor="let image of overlayImages" class="photoGrids">
-          <ng-container *ngIf="isImage(image); else textBox">
-            <img class="img" [src]="image" alt="Fullscreen Image" />
-          </ng-container>
-          <ng-template #textBox>
-            <div class="text-box">{{ image }}</div>
-          </ng-template>
+    <!-- Overlay for fullscreen images -->
+    <div class="project-container">
+      <div class="image-overlay" *ngIf="overlayVisible" (click)="hideOverlay()">
+        <div class="empty"></div>
+        <div class="overlay-grid">
+          <div *ngFor="let image of overlayImages" class="photoGrids">
+            <ng-container *ngIf="isImage(image); else textBox">
+              <img class="img" [src]="image" alt="Fullscreen Image" />
+            </ng-container>
+            <ng-template #textBox>
+              <div class="text-box">{{ image }}</div>
+            </ng-template>
+          </div>
         </div>
       </div>
     </div>

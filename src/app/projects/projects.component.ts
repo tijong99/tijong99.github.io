@@ -7,12 +7,12 @@ import {
   Renderer2,
   ViewChildren,
   CUSTOM_ELEMENTS_SCHEMA,
+  ViewEncapsulation,
 } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-projects',
@@ -21,6 +21,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   schemas: [CUSTOM_ELEMENTS_SCHEMA], // Added CUSTOM_ELEMENTS_SCHEMA
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
+  encapsulation: ViewEncapsulation.None, // Disable encapsulation
 })
 export class ProjectsComponent implements AfterViewInit {
   @ViewChildren('projectPage', { read: ElementRef })
@@ -64,9 +65,9 @@ export class ProjectsComponent implements AfterViewInit {
           'Exploring the potential of a novel material through open-ended making, into posthuman jewelry.',
         date: 'Juli 2025 - CA/TR',
         paragraphs: [
-          'This graduation project zooms out to often overlooked timescales in design, from the gradual deterioration of materials to the products of now becoming fossils of the future. Showing the opportunities of realizing that a design is never finished.',
-          'At its core it proposes a novel material that harnesses the slow dynamics of metal corrosion to produce unique aesthetic expressions that evolve over multiple timescales. By designing a series of trinkets, the project invites reflections on how making, experiencing, and intentionally playfully unmaking with this material can foreground these other-temporal dimensions.',
-          'Through these reflections, in combination with a small diary study, the project contributes to operationalizing longer timescales in design. A repertoire for unmaking – a set of activities designers could utilize to bring the agency of deterioration and multiple timescales to the foreground in their design processes - is presented as a pragmatic tool, alongside conceptual discussions on time-metaphors and notions such as care and authenticity that change through the lens of long timescales.',
+          '<div class="global-content">This graduation project <span class="violet">zooms out to often overlooked timescales in design</span>, from the gradual deterioration of materials to the products of now becoming fossils of the future. Showing the opportunities of realizing that a design is never finished.</div>',
+          '<div class="global-content">At its core it proposes <span class="blue">a novel material</span> that harnesses <span class="blue">the slow dynamics of metal corrosion</span> to produce <span class="orange">unique aesthetic expressions</span> that evolve over multiple timescales. By designing a series of trinkets, the project invites reflections on how making, experiencing, and intentionally playfully unmaking with this material can foreground these other-temporal dimensions.</div>',
+          '<div class="global-content">Through these reflections, in combination with a small diary study, the project contributes to operationalizing longer timescales in design. A repertoire for unmaking – a set of activities designers could utilize to bring the agency of deterioration and multiple timescales to the foreground in their design processes - is presented as a pragmatic tool, alongside <span class="violet">conceptual discussions on time-metaphors and notions such as care and authenticity</span> that change through the lens of long timescales.</div>',
         ],
       },
     },
@@ -93,12 +94,12 @@ export class ProjectsComponent implements AfterViewInit {
       line: 'The Oids',
       content: {
         heading: 'M12 - The Oids',
-        subheading:
-          'Exploring the potential of a novel material through open-ended making, into posthuman jewelry.',
+        subheading: 'Shaping complexity into benign form.',
         date: 'Juli 2025 - CA/TR',
         paragraphs: [
-          'Are there patterns in how things come into being?',
-          'During this research process, I embarked on an open-ended journey to explore what complexity means for design. Through over 50 iterations of the oids—a designed artifact consisting of a springy 3D-printed body and a magnet—I studied their behavior and the emergent qualities that arose when they moved in swarms.This exploration proved highly fruitful. The artifacts had an inherent attraction to anyone who interacted with them, and multiple academic directions emerged from the study (e.g., non-human charisma).Ultimately, I concluded that complexity has a benign shape—one that can be molded. To capture this, I formulated a set of heuristics for designing such artifacts, enabling complex tangible interaction and offering both an invitation and an initial vocabulary for other designers to embark on similar journeys.This insight profoundly influenced my design process, leading me to explore complexity dividends and consider design entropy as essential factors in my work.',
+          '<div class="global-content">Are there patterns in how things come into being?</div>',
+          '<div class="global-content">During this research process, I embarked on an open-ended journey to <span class="violet">explore what complexity means for design</span>. Through over 50 iterations of the oids—a designed artifact consisting of <span class="blue">a springy 3D-printed body</span> and a magnet—I studied their behavior and the emergent qualities that arose when they moved in swarms. This exploration proved highly fruitful. The artifacts had an inherent attraction to anyone who interacted with them, and multiple academic directions emerged from the study (e.g., non-human charisma). Ultimately, I concluded that <span class="orange">complexity has a benign shape</span>—one that can be molded.</div>',
+          '<div class="global-content">To capture this, I formulated a set of heuristics for designing such artifacts, enabling complex tangible interaction and offering both <span class="red">an invitation</span> and an initial vocabulary for other designers to embark on similar journeys. This insight profoundly influenced my design process, leading me to explore complexity dividends and consider design entropy as essential factors in my work.</div>',
         ],
       },
     },
@@ -128,9 +129,9 @@ export class ProjectsComponent implements AfterViewInit {
 
         date: 'Januari 2024 - US-TR (MDC-CA)',
         paragraphs: [
-          'In a project that was far more pragmatic and situated than my personal work, we developed a workshop and a dichotomic prototype, presenting two radically different implementations of transparency policy. The setup was designed with a high level of detail to facilitate discussion on the situated specifics of these imagined implementations.',
-          'By experiencing the prototypes firsthand, stakeholders could concretely see how specific design choices shape the experiences of both government officials and citizens within transparency processes. We consider this dichotomic setup to be a generalizable research approach.',
-          'This project serves as an example of how to foreground the complexities of an Anthropocene system.',
+          '<div class="global-content">In a project that was far more pragmatic and situated than my personal work, we developed a workshop and a dichotomic prototype, presenting two radically different implementations of transparency policy. The setup was designed with <span class="blue">a high level of detail</span> to facilitate <span class="violet">different implementations of transparency policy</span>.</div>',
+          '<div class="global-content">By experiencing the prototypes firsthand, stakeholders could concretely see how specific design choices shape the experiences of both government officials and citizens within transparency processes. We consider this dichotomic setup to be a generalizable research approach.</div>',
+          '<div class="global-content">This project serves as an example of how to foreground the complexities of an Anthropocene system.</div>',
         ],
       },
     },
@@ -149,8 +150,8 @@ export class ProjectsComponent implements AfterViewInit {
         subheading: 'Conveying agency in technological objects',
         date: 'June 2024',
         paragraphs: [
-          'Following Ballroom, I continued to explore my fascination with the liveliness of non-living things. In this multidisciplinary project, we investigated additional qualities that shape the perception of agency, ranging from material expression and contextual framing to movement dynamics, through highly embodied ideation processes.',
-          'We qualitatively assessed the perception of agency in our work Experiment Eight: a detailed interactive installation inspired by contemporary dance, experienced by 40 participants.',
+          '<div class="global-content">Following Ballroom, I continued to explore my fascination with the liveliness of non-living things. In this multidisciplinary project, we investigated additional qualities that <span class="orange">shape the perception of agency</span>, ranging from material expression and contextual framing to movement dynamics, through <span class="orange">highly embodied ideation processes</span>.</div>',
+          '<div class="global-content">We qualitatively assessed the perception of agency in our work Experiment Eight: <span class="blue">a detailed interactive installation</span> inspired by contemporary dance, experienced by 40 participants.</div>',
         ],
       },
     },
@@ -169,9 +170,9 @@ export class ProjectsComponent implements AfterViewInit {
         subheading: 'Creating silver jewelry from medical imagery',
         date: 'January 2022',
         paragraphs: [
-          'You might not recognize it, but this is the shape of an actual rectum. The model—extracted from DICOM files of a CT scan—captures the precise geometry of a rectum, which was then transformed into a silver pendant using the lost wax casting method from a 3D print.',
-          'Due to its ambiguous form, the necklace’s meaning remains subtly concealed. To most observers, it appears as a naturalistic, amorphous shape.',
-          'I have long seen potential in developing this as a service for individuals with a deeply personal connection to a part of their body—such as cancer survivors. The pendant could serve as a way to reframe their relationship with their body and past experiences, offering a means to process and reinterpret their journey.',
+          '<div class="global-content">You might not recognize it, but this is the shape of an actual rectum. The model—<span class="yellow">extracted from DICOM files of a CT scan</span>—captures the precise geometry of a rectum, which was then transformed into a silver pendant using <span class="blue">the lost wax casting method</span> from a 3D print.</div>',
+          '<div class="global-content">Due to its <span class="orange">ambiguous form</span>, the necklace’s meaning remains subtly concealed. To most observers, it appears as a naturalistic, amorphous shape.</div>',
+          '<div class="global-content">I have long <span class="red">seen potential</span> in developing this as a service for individuals with a deeply personal connection to a part of their body—such as cancer survivors. The pendant could serve as a way to reframe their relationship with their body and past experiences, offering a means to process and reinterpret their journey.</div>',
         ],
       },
     },
@@ -195,9 +196,9 @@ export class ProjectsComponent implements AfterViewInit {
         subheading: 'Moved by light',
         date: 'October 2021',
         paragraphs: [
-          'The world is increasingly governed by algorithms. Human movement—and how it is perceived and enacted—is intricately linked to other actors and the environment. Rich interactions emerge when you design these simple relationships within their context.',
-          'In the aftermath of COVID, we designed a ballroom where people could celebrate being together outside once again. We developed a ‘social-distancing-proof’ system using a simple Kalman filter and prediction algorithm, which created a convincing experience of "dancing with" others.',
-          'Based on my BSc thesis, the system allowed for 16 light-human dance couples to form, using AI-powered pedestrian detection from an overhead sensing system, part of the living lab. This project was exhibited during GLOW 2021 on campus.',
+          '<div class="global-content">The world is increasingly governed by algorithms. Human movement—and how it is perceived and enacted—is intricately linked to other actors and the environment. Rich interactions emerge when you design these simple relationships within their context.</div>',
+          '<div class="global-content">In the aftermath of COVID, we designed a ballroom where <span class="violet">people could celebrate being together</span> outside once again. We developed a ‘social-distancing-proof’ system using a simple <span class="blue">Kalman filter and prediction algorithm</span>, which created a convincing experience of "dancing with" others.</div>',
+          '<div class="global-content">Based on my BSc thesis, the system allowed for 16 light-human dance couples to form, using <span class="yellow">AI-powered pedestrian detection from an overhead sensing system</span>, part of the living lab. This project was exhibited during <span class="red">GLOW 2021</span> on campus.</div>',
         ],
       },
     },
@@ -218,8 +219,8 @@ export class ProjectsComponent implements AfterViewInit {
           'Creating a daily ritual of sharing our compassion as a statement of peace',
         date: 'April 2022',
         paragraphs: [
-          'When the war in Ukraine began, both I and the innovation space felt overwhelmingly powerless and wanted to contribute in some meaningful way. Very quickly, we assembled a team to develop an installation artwork to show our support for those affected by the situation.',
-          'In the transitional space between the entrance and landing floor, we created an interactive experience where any passerby could send a drawing of a heart, which would then be projected onto both them and the wall they were facing. As more blue and yellow hearts were added, they mixed together to create an increasingly white projection, symbolizing our shared intention for peace.',
+          '<div class="global-content">When the war in Ukraine began, both I and the innovation space felt overwhelmingly powerless and wanted to <span class="violet">contribute in some meaningful way</span>. Very quickly, <span class="red">we assembled a team</span> to develop an installation artwork to show our support for those affected by the situation.</div>',
+          '<div class="global-content">In the transitional space between the entrance and landing floor, we created an <span class="orange">interactive experience</span> where any passerby could send a drawing of a heart, which would then be projected onto both them and the wall they were facing. As more blue and yellow hearts were added, they mixed together to create an increasingly white projection, symbolizing our shared intention for peace.</div>',
         ],
       },
     },
@@ -244,9 +245,9 @@ export class ProjectsComponent implements AfterViewInit {
         subheading: 'Guerilla hacking of public lighting',
         date: 'June 2021',
         paragraphs: [
-          'A specific rail underpass, over 100 meters long and located next to the campus, was dull by day and intimidating by night. Stuck in bureaucratic limbo, awaiting development as part of a new construction project, it had been neglected.',
-          'Driven by a stubborn desire to address this, I designed an immersive, colorful installation and, with the help of friends, implemented it at night. The result was a moment of wonder for every passerby, and the Aldermen were impressed.',
-          'Through this act of guerrilla light street art, I reflect on the urban development process and suggest the role one can play as a constructive, designing citizen—ultimately inspiring me to approach the world as if it were my own backyard.',
+          '<div class="global-content">A specific rail underpass, over 100 meters long and located next to the campus, was dull by day and <span class="violet">it had been neglected</span> by night. Stuck in bureaucratic limbo, awaiting development as part of a new construction project, it had been neglected.</div>',
+          '<div class="global-content">Driven by a stubborn desire to address this, I designed an <span class="orange">immersive, colorful installation</span> and, with the help of friends, implemented it at night. The result was a <span class="orange">moment of wonder</span> for every passerby, and the Aldermen were impressed.</div>',
+          '<div class="global-content">Through this act of guerrilla light street art, I reflect on the urban development process and suggest the role one can play as a <span class="red">constructive, designing citizen</span>—ultimately inspiring me to approach the world as if it were my own backyard.</div>',
         ],
       },
     },
@@ -279,8 +280,8 @@ export class ProjectsComponent implements AfterViewInit {
           'Sprouting light-streetart to highlight the unused potential across the city as a living ecosystem',
         date: 'April 2024',
         paragraphs: [
-          'The city, one of my obsessions, is a complex, living ecosystem. Like any ecosystem, it consists of actors, processes, and cycles. Part of the ecosystem decomposes to make room for new growth—autopoiesis. This city, in a constant state of coupled self-generation and decay, is not managed with this understanding.',
-          'I introduce a new urban mycelium to the ecosystem. Through this street art project, I allow light-emitting "elven benches" to fruit. Just as fungi sprout fruiting bodies from their mycelium in areas where the city is decomposing, I aim to close the cycle of urban growth. In doing so, I highlight areas with high potential for new development and challenge the conventional cycle of urban development through a naturalistic metaphor.',
+          '<div class="global-content">The city, one of my obsessions, is a complex, living ecosystem. Like any ecosystem, it consists of actors, processes, and cycles. Part of the ecosystem decomposes to make room for new growth—autopoiesis. This city, in a constant state of coupled self-generation and decay, <span class="violet">is not managed with this understanding</span>.</div>',
+          '<div class="global-content">I introduce a new urban mycelium to the ecosystem. Through this street art project, I allow <span class="blue">light-emitting</span> "elven bankjes" to fruit. Just as fungi sprout fruiting bodies from their mycelium in areas where the city is decomposing, I aim to close the cycle of urban growth. In doing so, I highlight areas with high potential for new development and challenge the conventional cycle of urban development through a <span class="orange">naturalistic metaphor</span>.</div>',
         ],
       },
     },
@@ -300,21 +301,21 @@ export class ProjectsComponent implements AfterViewInit {
         'FACT 2: Evaluated through UX surveys and workshops.',
       ],
       title: 'EX',
-      line: 'freelance',
+      line: 'Freelance',
       content: {
         heading: 'Uncommon Public Lighting consultancy',
         subheading:
           'Creatively converging municipalities and industry to develop novel public lighting concepts for yet unsolved characteristic cases',
         date: 'June 2023 – June 2024',
         paragraphs: [
-          'As a freelance designer, I joined the team at Lighthouse Tue, working to bring together all partners in the public lighting ecosystem in a user-centric way. Our goal was to develop new design solutions for archetypal public lighting challenges that remain unsolved.',
-          'For the municipalities of Amsterdam, Amstelveen, and Utrecht, we developed over 16 design concepts across two projects. These concepts converged into prototypes that were evaluated through UX surveys, light intensity analyses, and situated workshops with stakeholders and visitors. The workshops helped us understand the interconnections between the various actors involved.',
+          '<div class="global-content">As a <span class="red">freelance designer</span>, I joined the team at Lighthouse Tue, working to bring together all partners in the public lighting ecosystem in a user-centric way. Our goal was to develop new design solutions for archetypal public lighting challenges that remain unsolved.</div>',
+          '<div class="global-content">For the municipalities of Amsterdam, Amstelveen, and Utrecht, we developed over 16 design concepts across two projects. These concepts <span class="blue">converged into prototypes</span> that were <span class="violet">evaluated through UX surveys</span>, light intensity analyses, and situated workshops with stakeholders and visitors. The workshops helped us understand the interconnections between the various actors involved.</div>',
         ],
       },
     },
   ];
 
-  constructor(private renderer: Renderer2, private sanitizer: DomSanitizer) {
+  constructor(private renderer: Renderer2) {
     this.renderer.listen('window', 'scroll', this.detectProjectPage.bind(this));
   }
   stylesList = ['red', 'orange', 'yellow', 'green', 'blue', 'violet'];

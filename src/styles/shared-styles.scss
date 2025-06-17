@@ -1,0 +1,94 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.text {
+  position: relative;
+  animation: fadeIn 2s ease-in-out;
+  z-index: 1 !important; // Ensure text is above other elements
+  height: 100%;
+  font-size: calc(3.2vw + 3.2vh);
+  font-weight: 300;
+  color: transparent; // Make text transparent to show gradient
+  align-content: left;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(90deg, rgb(77, 5, 24), rgb(90, 22, 3));
+  -webkit-background-clip: text; // Clip the background to the text
+  background-clip: text;
+}
+
+.yellow {
+  background: linear-gradient(
+    135deg,
+    rgba(226, 15, 180, 0.7),
+    rgba(177, 15, 226, 0.8)
+  );
+  color: white;
+  padding: 0.3em;
+  border-radius: 0.1em;
+  box-shadow: 0.03em 0.03em 0.2em rgba(217, 133, 199, 0.5);
+  text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.violet {
+  background: linear-gradient(
+    45deg,
+    rgba(12, 166, 154, 0.7),
+    rgba(12, 127, 166, 0.8)
+  );
+  color: white;
+  border-radius: 0.1em;
+  padding: 0.3em;
+  box-shadow: 0.03em 0.03em 0.2em rgba(12, 166, 154, 0.5);
+  text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.blue {
+  background: linear-gradient(
+    60deg,
+    rgba(204, 238, 6, 0.8),
+    rgba(230, 246, 8, 0.7)
+  );
+  color: white;
+  padding: 0.3em;
+  border-radius: 0.1em;
+  box-shadow: 0.03em 0.03em 0.2em rgba(250, 220, 29, 0.5);
+  text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.red {
+  background: linear-gradient(
+    90deg,
+    rgba(249, 82, 140, 0.8),
+    rgba(255, 50, 50, 0.8)
+  );
+  color: white;
+  border-radius: 0.1em;
+  padding: 0.3em;
+  box-shadow: 0.03em 0.03em 0.2em rgba(249, 82, 140, 0.5);
+  text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.orange {
+  background: linear-gradient(
+    100deg,
+    rgba(203, 86, 2, 0.7),
+    rgba(255, 150, 0, 0.8)
+  );
+  color: white;
+  padding: 0.3em;
+  border-radius: 0.1em;
+  box-shadow: 0.03em 0.03em 0.2em rgba(229, 95, 0, 0.5);
+  text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.2);
+}
+
+.global-content {
+  all: unset; // Reset styles to ensure global styles apply
+  display: block;
+}

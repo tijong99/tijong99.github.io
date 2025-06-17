@@ -1,7 +1,30 @@
 @use "@angular/material" as mat;
 
 .home-container {
-  background-color: rgba(255, 255, 255, 1);
+  background: white; /* Gradient overlay */
+}
+.whitebackground {
+  position: absolute; // Change from relative to absolute
+  top: -90vh; // Ensure it starts at the top
+  left: 0;
+  z-index: 100; // Ensure it is above other elements
+  transition: backdrop-filter 1s ease-in-out, transform 1s ease-in-out; // Smooth transition for both states
+  width: 100vw; // Make it span the full width of the viewport
+  height: 90vh; // Make it span the full height of the viewport
+  transform: translateY(0); // Reset position when blur-active is removed
+  backdrop-filter: blur(0); // Remove blur effect
+  -webkit-backdrop-filter: blur(0); // Remove blur effect for Safari
+  border-color: white;
+  border-width: 5px;
+}
+
+.whitebackground.blur-active {
+  z-index: 9; // Ensure it remains above other elements
+  transform: translateY(90vh); // Move down by 90vh
+  backdrop-filter: blur(10px); // Apply blur effect
+  -webkit-backdrop-filter: blur(10px); // Apply blur effect for Safari
+
+  // Use a semi-transparent white background
 }
 
 .main {
@@ -12,15 +35,6 @@
   font-weight: 300;
 
   text-align: justify;
-}
-.whitebackground {
-  background-color: rgba(255, 255, 255, 1);
-  z-index: 2;
-  display: block;
-  position: sticky;
-  height: 100vh;
-  width: auto;
-  margin-bottom: -10vh;
 }
 
 .footer {
@@ -41,14 +55,16 @@
   color: rgba(217, 210, 208, 1) !important;
   height: 10vh !important;
   font-family: "Winky Sans", sans-serif;
-  font-weight: 800;
+  font-weight: 400;
   font-size: calc(2vw);
 }
 
 ::ng-deep .mat-mdc-tab.mdc-tab {
   height: 10vh !important;
   font-family: "Winky Sans", sans-serif;
-  font-weight: 800;
+  font-weight: 400;
+  color: rgba(64, 13, 1, 1);
+
   font-size: calc(2vw);
 }
 

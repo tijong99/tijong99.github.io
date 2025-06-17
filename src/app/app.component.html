@@ -1,17 +1,18 @@
-<div class="home-container">
+<div class="home-container" style="background: rgba(0, 0, 0, 0)">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
     rel="stylesheet"
   />
-  <div class="whitebackground">
+  <div class="home-container">
     <app-home class="main"></app-home>
+    <div class="whitebackground" [class.blur-active]="blurActive"></div>
   </div>
 
   <div class="footer">
     <mat-tab-group
-      class="red"
+      class=""
       (selectedTabChange)="selectedTabChange($event)"
       [selectedIndex]="
         pageSelected === 'projects' ? 0 : pageSelected === 'portfolio' ? 4 : 1
@@ -24,7 +25,7 @@
       fitInkBarToContent
     >
       <mat-tab label="Projects"></mat-tab>
-      <mat-tab disabled label="Tim de Jong"></mat-tab>
+      <mat-tab label="Tim de Jong"></mat-tab>
       <mat-tab label="About me"></mat-tab>
     </mat-tab-group>
   </div>

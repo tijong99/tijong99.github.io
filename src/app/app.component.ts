@@ -1,6 +1,6 @@
 import { MatTabChangeEvent, MatTabsModule } from '@angular/material/tabs';
 import { CommonModule } from '@angular/common';
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, HostListener } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -22,6 +22,7 @@ export class AppComponent {
   projectsComponent: ElementRef;
 
   pageSelected: string = '';
+  blurActive: boolean = false; // State variable for blur effect
 
   constructor() {
     this.mainColor = this.randomColor();
@@ -40,12 +41,15 @@ export class AppComponent {
     switch (event.index) {
       case 0:
         this.pageSelected = 'projects';
+        this.blurActive = true; // Activate blur
         break;
       case 2:
         this.pageSelected = 'portfolio';
+        this.blurActive = true; // Activate blur
         break;
       default:
         this.pageSelected = '';
+        this.blurActive = false; // Deactivate blur
     }
   }
 
@@ -57,5 +61,13 @@ export class AppComponent {
       );
       projectElement?.scrollIntoView({ behavior: 'smooth' });
     }, 0); // Wait for the Projects component to render
+  }
+
+  @HostListener('window:scroll', [])
+  onScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop === 0) {
+      this.blurActive = false; // Deactivate blur when scrolled to the top
+    }
   }
 }

@@ -9,11 +9,13 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  stylesList = ['red', 'orange', 'yellow', 'blue', 'violet'];
+  styleIndex = 0;
   hoverTextList: HoverText[] = [
     {
       index: 0,
       list: ['Seeking', 'Traversing', 'Exploring', 'Revealing'],
-      style: 'red',
+      style: this.stylesList[this.randomColor()],
     },
 
     {
@@ -24,7 +26,7 @@ export class HomeComponent {
     {
       index: 0,
       list: ['creative', 'generative', 'transformative'],
-      style: 'red',
+      style: this.stylesList[this.randomColor()],
     },
     {
       index: 0,
@@ -34,7 +36,7 @@ export class HomeComponent {
     {
       index: 0,
       list: ['natural', 'physical'],
-      style: 'red',
+      style: this.stylesList[this.randomColor()],
     },
     {
       index: 0,
@@ -44,7 +46,7 @@ export class HomeComponent {
     {
       index: 0,
       list: ['artistic', 'tinkering', 'open-ended making', 'enacting'],
-      style: 'red',
+      style: this.stylesList[this.randomColor()],
     },
     {
       index: 0,
@@ -55,7 +57,7 @@ export class HomeComponent {
     {
       index: 0,
       list: ['imagine', 'dream', 'verbalize', 'demonstrate', 'research'],
-      style: 'red',
+      style: this.stylesList[this.randomColor()],
     },
     {
       index: 0,
@@ -65,7 +67,7 @@ export class HomeComponent {
     {
       index: 0,
       list: ['being with', 'relating to'],
-      style: 'red',
+      style: this.stylesList[this.randomColor()],
     },
     {
       index: 0,
@@ -75,7 +77,7 @@ export class HomeComponent {
     {
       index: 0,
       list: ['systems', 'technologies', 'practices'],
-      style: 'red',
+      style: this.stylesList[this.randomColor()],
     },
     {
       index: 0,
@@ -83,9 +85,6 @@ export class HomeComponent {
       style: 'text2',
     },
   ];
-
-  stylesList = ['red', 'orange', 'yellow', 'blue', 'violet'];
-  styleIndex = 0;
 
   randomColor() {
     this.styleIndex = Math.floor(Math.random() * 5);
