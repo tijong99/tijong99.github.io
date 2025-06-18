@@ -211,7 +211,7 @@
   align-content: stretch; // Center items vertically
   gap: 0; // Remove additional gaps between rows
   padding: 2vw; // Remove extra padding
-
+  z-index: 109;
   max-height: 100%; // Limit grid height
   max-width: 100%;
   width: 100%;
@@ -219,12 +219,17 @@
   overflow-y: auto; // Enable vertical scrolling
   overflow-x: hidden; // Disable horizontal scrolling
   scrollbar-width: thin; // Customize scrollbar width for modern browsers
-  backdrop-filter: blur(5px); // Apply a blur effect to the background
-  transition: backdrop-filter 0.5s ease-in-out; // Smooth transition for blur effect
+  backdrop-filter: blur(15px); // Increase blur intensity
+  -webkit-backdrop-filter: blur(15px); // Add fallback for WebKit browsers
+  transition: backdrop-filter 0.5s ease-in-out,
+    -webkit-backdrop-filter 0.5s ease-in-out; // Smooth transition
 }
 
 .overlay-grid:hover {
-  backdrop-filter: blur(10px); // Increase blur on hover
+  backdrop-filter: blur(20px); // Enhance blur effect on hover
+  -webkit-backdrop-filter: blur(
+    20px
+  ); // Ensure hover effect works on WebKit browsers
 }
 
 .photoGrids {
@@ -242,9 +247,9 @@
 .img {
   width: auto; // Ensure images fill their container
   height: auto; // Maintain aspect rati
-  max-height: 33vh;
+  max-height: 30vh; //aanpassen na fotos!
   transition: opacity 0.3s ease; // Smooth fade effect
-  opacity: 0.8;
+  opacity: 0.98;
 }
 
 .img:hover {
@@ -264,7 +269,7 @@
   justify-content: flex-start;
   align-items: left;
   width: 30vh;
-  height: 30vh; // Match the height of images
+  height: 30vh; //aanpassen na fotos!
   background-color: rgba(217, 210, 208, 1); // Match the project page background
   color: rgba(64, 13, 1, 1); // Match the heading text color
   font-family: "Winky Sans", sans-serif; // Match the heading font
@@ -272,6 +277,13 @@
   font-size: 3vh; // Match the heading font size
   text-align: left; // Center text
   padding: 3px;
+}
+
+.pink-link {
+  color: rgba(226, 15, 121, 0.8); /* Same pink as homepage highlight */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .smth::before {

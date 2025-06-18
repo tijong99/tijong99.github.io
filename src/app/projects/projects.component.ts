@@ -43,19 +43,17 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/FMP/Broche1.jpg',
         '../../assets/FMP/c6dbd9a5-fb14-4514-9f38-8f15f55be1b9.jpg',
         '../../assets/FMP/IMG_6717.jpeg',
-        '../../assets/FMP/IMG_7117.HEIC',
-        '../../assets/FMP/IMG_7135.HEIC',
         '../../assets/FMP/pen1a.jpg',
         '../../assets/FMP/PXL_20241025_074434844.MP.jpg',
         '../../assets/FMP/Watch1.png',
         '../../assets/FMP/WIN_20241114_13_12_54_Pro.jpg',
         '../../assets/FMP/WIN_20241114_13_13_43_Pro.jpg',
         '../../assets/FMP/WIN_20241129_11_42_22_Pro.jpg',
-        'FACT 1: This project took 6 months to complete.',
-        'FACT 2: Inspired by nature.',
-        'FACT 3: Incorporated a 4-month biographical study.',
-        'FACT 4: Created 10 watches, 4 rings, 5 pens, and 2 brooches.',
-        'FACT 5: Lab at Amsterdam Fashion Institute (AMFI).',
+        'FMP and M21 - in collaboration witth SCAPE AGENCY',
+        'Incorporated a 4-month biographical study and a 3 day diary study with designers.',
+        'Created 10 watches, 4 rings, 5 pens, and 2 brooches.',
+        'Lab at Amsterdam Fashion Institute (AMFI).',
+        'CA, TR, US',
       ],
       title: 'FMP (M21)',
       line: 'Metalmorphosis',
@@ -63,11 +61,17 @@ export class ProjectsComponent implements AfterViewInit {
         heading: 'FMP (M21) - Timeless, a Chronolabe',
         subheading:
           'Exploring the potential of a novel material through open-ended making, into posthuman jewelry.',
-        date: 'Juli 2025 - CA/TR',
+        date: 'Juli 2025',
         paragraphs: [
-          '<div class="global-content">This graduation project <span class="violet">zooms out to often overlooked timescales in design</span>, from the gradual deterioration of materials to the products of now becoming fossils of the future. Showing the opportunities of realizing that a design is never finished.</div>',
-          '<div class="global-content">At its core it proposes <span class="blue">a novel material</span> that harnesses <span class="blue">the slow dynamics of metal corrosion</span> to produce <span class="orange">unique aesthetic expressions</span> that evolve over multiple timescales. By designing a series of trinkets, the project invites reflections on how making, experiencing, and intentionally playfully unmaking with this material can foreground these other-temporal dimensions.</div>',
-          '<div class="global-content">Through these reflections, in combination with a small diary study, the project contributes to operationalizing longer timescales in design. A repertoire for unmaking – a set of activities designers could utilize to bring the agency of deterioration and multiple timescales to the foreground in their design processes - is presented as a pragmatic tool, alongside <span class="violet">conceptual discussions on time-metaphors and notions such as care and authenticity</span> that change through the lens of long timescales.</div>',
+          this.wrapGlobalContent(
+            'This graduation project <span class="violet">zooms out to often overlooked timescales in design</span>, from the gradual deterioration of materials to the products of now becoming fossils of the future. Showing the opportunities of realizing that a design is never finished.'
+          ),
+          this.wrapGlobalContent(
+            'At its core it proposes <span class="blue">a novel material</span> that harnesses <span class="blue">the slow dynamics of metal corrosion</span> to produce <span class="orange">unique aesthetic expressions</span> that evolve over multiple timescales. By designing a series of trinkets, the project invites reflections on how making, experiencing, and intentionally playfully unmaking with this material can foreground these other-temporal dimensions.'
+          ),
+          this.wrapGlobalContent(
+            'Through these reflections, in combination with a small diary study, the project contributes to operationalizing longer timescales in design. A repertoire for unmaking – a set of activities designers could utilize to bring the agency of deterioration and multiple timescales to the foreground in their design processes - is presented as a pragmatic tool, alongside <span class="violet">conceptual discussions on time-metaphors and notions such as care and authenticity</span> that change through the lens of long timescales.'
+          ),
         ],
       },
     },
@@ -86,8 +90,9 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/M12/Starlings.jpg',
         '../../assets/M12/VC.png',
         '../../assets/M12/VISUALS 2.png',
-        'FACT 1: Over 50 iterations were made.',
-        'FACT 2: Uses magnets for interaction.',
+        'Over 50 iterations were made.',
+        'Uses magnets for interaction.',
+        'TR, CA, MDC',
       ],
       title: 'M12 ',
 
@@ -95,7 +100,7 @@ export class ProjectsComponent implements AfterViewInit {
       content: {
         heading: 'M12 - The Oids',
         subheading: 'Shaping complexity into benign form.',
-        date: 'Juli 2025 - CA/TR',
+        date: 'Juli 2025',
         paragraphs: [
           '<div class="global-content">Are there patterns in how things come into being?</div>',
           '<div class="global-content">During this research process, I embarked on an open-ended journey to <span class="violet">explore what complexity means for design</span>. Through over 50 iterations of the oids—a designed artifact consisting of <span class="blue">a springy 3D-printed body</span> and a magnet—I studied their behavior and the emergent qualities that arose when they moved in swarms. This exploration proved highly fruitful. The artifacts had an inherent attraction to anyone who interacted with them, and multiple academic directions emerged from the study (e.g., non-human charisma). Ultimately, I concluded that <span class="orange">complexity has a benign shape</span>—one that can be molded.</div>',
@@ -116,9 +121,9 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/M11/PXL_20231020_091112734.MP~2 (1).jpg',
         '../../assets/M11/PXL_20231208_125910378.MP.jpg',
         '../../assets/M11/PXL_20231214_134353283.MP.jpg',
-        '../../assets/M11/RT - Copy.png',
-        'FACT 1: Stakeholders experienced prototypes firsthand.',
-        'FACT 2: Designed to facilitate transparency discussions.',
+        'Stakeholders experienced prototypes firsthand.',
+        'Designed to facilitate transparency discussions.',
+        'US-TR',
       ],
       title: 'M11',
       line: 'Radical Transparency',
@@ -139,9 +144,9 @@ export class ProjectsComponent implements AfterViewInit {
       image: '../../assets/ArtTech.png', // Placeholder image path
       images: [
         '../../assets/ArtTech.png', // Placeholder image path
-        'https://youtu.be/GmpuFuxuoO4?feature=shared',
-        'FACT 1: TR CA',
-        'FACT 2: EXPERIMENT 8.',
+        'Video: https://youtu.be/GmpuFuxuoO4?feature=shared',
+        'TR CA',
+        'EXPERIMENT 8.',
       ],
       title: 'Art-Tech ISP',
       line: 'Experiment Eight',
@@ -160,8 +165,10 @@ export class ProjectsComponent implements AfterViewInit {
       images: [
         '../../assets/rectum/Rectum.png',
         '../../assets/rectum/Screenshot 2025-05-01 151959.png',
-        'FACT 1: Based on medical imagery.',
-        'FACT 2: Created using lost wax casting.',
+        'Based on medical imagery.',
+        'Created using lost wax casting.',
+        'As a present to my mother for her PhD thesis on rectal cancer.',
+        'TR, CA, MDC',
       ],
       title: 'EX',
       line: 'Anatomy in silver',
@@ -186,8 +193,12 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/Ballroom/s.jpeg',
         '../../assets/Ballroom/Screenshot 2025-05-01 150701.png',
         '../../assets/Ballroom/Screenshot 2025-05-01 150721.png',
-        'FACT 1: Designed post-COVID for social distancing.',
-        'FACT 2: Featured at GLOW 2021.',
+        ' Designed post-COVID for social distancing.',
+        ' Featured at GLOW 2021.',
+        '580.000 visitors',
+        'Partners: TeamIGNITE, Studio Philip Ross, Crowdflow researchgroup, Quadrivium, Footloose, Hoevenaars, Intelligent lighting institute, GLOW',
+        'BE, TR, CA, MDC',
+        'Won the young talent award',
       ],
       title: 'EX',
       line: 'Ballroom',
@@ -208,8 +219,10 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/CollectingCompassion.png',
         '../../assets/CollectingCompassion/CollectingCompassion.png',
         '../../assets/CollectingCompassion/csm_innospace_fda109dec4.webp',
-        'FACT 1: Created to support Ukraine during the war.',
-        'FACT 2: Interactive experience with heart projections.',
+        'Created to support Ukraine during the war.',
+        'Interactive experience with heart projections.',
+        'Super quick project development.',
+        'BE, US',
       ],
       title: 'EX',
       line: 'Collecting compassion',
@@ -235,8 +248,9 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/EEM/Screenshot 2025-05-01 152717.png',
         '../../assets/EEM/Screenshot 2025-05-01 152747.png',
         '../../assets/EEM/Slide1.png',
-        'FACT 1: Guerrilla light street art.',
-        'FACT 2: Inspired by urban development processes.',
+        'Guerrilla light street art.',
+        'Inspired by urban development processes.',
+        'The municipality decided to keep the installation on commission.',
       ],
       title: 'EX',
       line: 'Een eindje mooier',
@@ -269,8 +283,8 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/Elvenbankjes/PXL_20240216_182236162.MP.jpg',
         '../../assets/Elvenbankjes/schetsen.jpg',
         '../../assets/Elvenbankjes/tekeningen.jpg',
-        'FACT 1: Highlights unused urban potential.',
-        'FACT 2: Inspired by natural ecosystems.',
+        'Highlights unused urban potential.',
+        'Inspired by natural ecosystems.',
       ],
       title: 'EX',
       line: 'Urban mycelium',
@@ -297,8 +311,8 @@ export class ProjectsComponent implements AfterViewInit {
         '../../assets/freelance/PXL_20240515_184222454.MP.jpg',
         '../../assets/freelance/PXL_20240515_190437688.MP.jpg',
         '../../assets/freelance/PXL_20240515_200812132.NIGHT.jpg',
-        'FACT 1: Developed 16 design concepts.',
-        'FACT 2: Evaluated through UX surveys and workshops.',
+        'Developed 16 design concepts.',
+        ' Evaluated through UX surveys and workshops.',
       ],
       title: 'EX',
       line: 'Freelance',
@@ -324,6 +338,10 @@ export class ProjectsComponent implements AfterViewInit {
   randomColor() {
     this.styleIndex = Math.floor(Math.random() * 6);
     return this.stylesList[this.styleIndex];
+  }
+
+  wrapGlobalContent(text: string): string {
+    return `<div class="global-content">${text}</div>`;
   }
 
   detectProjectPage() {

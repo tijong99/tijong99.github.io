@@ -12,10 +12,17 @@
   width: 100vw; // Make it span the full width of the viewport
   height: 90vh; // Make it span the full height of the viewport
   transform: translateY(0); // Reset position when blur-active is removed
-  backdrop-filter: blur(0); // Remove blur effect
-  -webkit-backdrop-filter: blur(0); // Remove blur effect for Safari
-  border-color: white;
-  border-width: 5px;
+  backdrop-filter: blur(5px); // Apply slight blur for glass effect
+  -webkit-backdrop-filter: blur(5px); // Safari compatibility
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); // Softer shadow for glass effect
+  background: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); // Add semi-transparent background for glass effect
+  border: 1px solid rgba(255, 255, 255, 0.3); // Add subtle border for glass pane
+  mix-blend-mode: hue; // Apply lighten blend mode
 }
 
 .whitebackground.blur-active {
@@ -23,8 +30,14 @@
   transform: translateY(90vh); // Move down by 90vh
   backdrop-filter: blur(10px); // Apply blur effect
   -webkit-backdrop-filter: blur(10px); // Apply blur effect for Safari
-
-  // Use a semi-transparent white background
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); // Slightly stronger shadow when active
+  background: rgba(
+    255,
+    255,
+    255,
+    0.4
+  ); // Slightly increase transparency when active
+  border: 1px solid rgba(255, 255, 255, 0.5); // Adjust border for active state
 }
 
 .main {
@@ -70,4 +83,22 @@
 
 .below-footer {
   margin-top: 10vh;
+}
+
+body {
+  cursor: none; // Hide the default cursor
+}
+
+.cursor-effect {
+  position: fixed; // Ensure it follows the mouse position
+  width: 3vw; // Reduce size to half
+  height: 3vw;
+  border-radius: 50%;
+  pointer-events: none; // Prevent interference with other elements
+  backdrop-filter: blur(7px); // Apply local blur effect
+  -webkit-backdrop-filter: blur(8px); // Safari compatibility
+  background: rgba(255, 255, 255, 0.13); // Reduce transparency further
+  mix-blend-mode: luminosity; // Apply lighten blend mode
+  z-index: 99999; // Ensure it is above all other elements
+  transition: left 0.05s ease-in-out, top 0.05s ease-in-out; // Smooth movement
 }

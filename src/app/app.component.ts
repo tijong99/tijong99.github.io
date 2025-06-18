@@ -70,4 +70,19 @@ export class AppComponent {
       this.blurActive = false; // Deactivate blur when scrolled to the top
     }
   }
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    const cursorElement = document.querySelector(
+      '.cursor-effect'
+    ) as HTMLElement;
+    if (cursorElement) {
+      cursorElement.style.left = `${
+        event.clientX - cursorElement.offsetWidth / 2
+      }px`;
+      cursorElement.style.top = `${
+        event.clientY - cursorElement.offsetHeight / 2
+      }px`;
+    }
+  }
 }
